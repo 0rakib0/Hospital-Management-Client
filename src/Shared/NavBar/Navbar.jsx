@@ -7,8 +7,8 @@ const NavBar = () => {
         <>
             <li className="hover:text-white"><Link to='/add-patients/'>Add Patient</Link></li>
             <li className="hover:text-white"><Link to='/all-patients/'>All Patient</Link></li>
-            <li className="hover:text-white"><Link>Patient Details</Link></li>
-            <li className="hover:text-white"><Link>Edit Patient</Link></li>
+            <li className="hover:text-white"><Link>Pending Patients</Link></li>
+            <li className="hover:text-white"><Link>Dischurse Patient</Link></li>
         </>
 
     const DoctorChilditemss =
