@@ -28,14 +28,14 @@ const Addpatients = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Patients Age</span>
                             </div>
-                            <input type="number" placeholder="Type here" className="input input-bordered w-full" />
+                            <input type="number" placeholder="Patients Age" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
 
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-bold">Phone Number</span>
                             </div>
-                            <input type="text" placeholder="Type here" className="input input-bordered w-full" />
+                            <input type="text" placeholder="Phone Number" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
@@ -43,14 +43,14 @@ const Addpatients = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Email Address</span>
                             </div>
-                            <input type="email" placeholder="Type here" className="input input-bordered w-full" />
+                            <input type="email" placeholder="Active Email Address" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
 
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-bold">Gender</span>
                             </div>
-                            <select name="" className="input input-bordered w-full" id="">
+                            <select name="" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
                                 <option className="mt-2" value="" selected hidden>SELECT</option>
                                 <option value="male">Male</option>
                                 <option value="male">Female</option>
@@ -62,14 +62,14 @@ const Addpatients = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Full Address</span>
                             </div>
-                            <input type="text" placeholder="Type here" className="input input-bordered w-full" />
+                            <input type="text" placeholder="Full Adress" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text font-bold">Details About Problem</span>
                         </div>
-                        <textarea name="" id="" cols="30" rows="5" className="border-2 p-2 w-full"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" className="border-2 p-2 w-full focus:border-secondaryColor focus:outline-0" placeholder="Tell me somethink about patient"></textarea>
                     </label>
                     <input type="submit" className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
                 </form>
