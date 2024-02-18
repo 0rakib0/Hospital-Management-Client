@@ -9,6 +9,8 @@ import router from './Routs/Routs.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className='bg-[#e4f1eafa]'>
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>,
 )
