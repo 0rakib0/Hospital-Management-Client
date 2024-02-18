@@ -4,6 +4,7 @@ import {
   } from "react-router-dom";
 import Root from "../Roots/Roots";
 import Dashbord from "../Pages/Dashbord/Dashbord";
+import Addpatients from "../Pages/Patients/AddPatients";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
         {
             path:'',
             element: <Dashbord></Dashbord>
+        },
+        {
+          path:'/add-patients/',
+          element: <Addpatients></Addpatients>
         }
       ]
     },
