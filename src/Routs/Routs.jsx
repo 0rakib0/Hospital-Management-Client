@@ -5,6 +5,7 @@ import {
 import Root from "../Roots/Roots";
 import Dashbord from "../Pages/Dashbord/Dashbord";
 import Addpatients from "../Pages/Patients/AddPatients";
+import AllPatients from "../Pages/Patients/All_patients";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         {
           path:'/add-patients/',
           element: <Addpatients></Addpatients>
+        },
+        {
+          path:'/all-patients/',
+          element: <AllPatients></AllPatients>
         }
       ]
     },

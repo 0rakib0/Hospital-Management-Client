@@ -6,7 +6,7 @@ const NavBar = () => {
     const PatientChilditemss =
         <>
             <li className="hover:text-white"><Link to='/add-patients/'>Add Patient</Link></li>
-            <li className="hover:text-white"><Link>All Patient</Link></li>
+            <li className="hover:text-white"><Link to='/all-patients/'>All Patient</Link></li>
             <li className="hover:text-white"><Link>Patient Details</Link></li>
             <li className="hover:text-white"><Link>Edit Patient</Link></li>
         </>
@@ -38,7 +38,7 @@ const NavBar = () => {
         <div className="bg-primaryColor mb-1 flex lg:items-center lg:flex-row flex-col lg:gap-24 px-6 lg:py-6 pb-6">
 
             <div className="mb-3 lg:mb-0 p-2">
-                <h4 className="text-4xl font-bold">LOGO</h4>
+                <h4 className="text-4xl font-bold text-white">LOGO</h4>
             </div>
             <div>
                 <ul className="flex lg:items-center lg:flex-row flex-col lg:justify-center  relative gap-y-2 gap-x-6">
