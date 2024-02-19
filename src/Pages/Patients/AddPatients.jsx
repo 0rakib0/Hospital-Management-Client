@@ -71,6 +71,11 @@ const Addpatients = () => {
                         </div>
                         <textarea name="" id="" cols="30" rows="5" className="border-2 p-2 w-full focus:border-secondaryColor focus:outline-0" placeholder="Tell me somethink about patient"></textarea>
                     </label>
+
+                    <div className="label">
+                            <span className="label-text font-bold">Patients Pic</span>
+                        </div>
+                        <input type="file" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                     <input type="submit" className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
                 </form>
             </div>
