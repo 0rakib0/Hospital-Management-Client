@@ -33,6 +33,12 @@ const NavBar = () => {
             <li className="hover:text-white"><Link>Payment Report</Link></li>
         </>
 
+    const otheseChildren =
+        <>
+            <li className="hover:"><Link>Add Notice</Link></li>
+            <li className="hover:text-white"><Link>Send Message</Link></li>
+        </>
+
 
     return (
         <div className="bg-primaryColor mb-1 flex lg:items-center lg:flex-row flex-col lg:gap-24 px-6 lg:py-6 pb-6">
@@ -47,6 +53,7 @@ const NavBar = () => {
                     <DropDownStack parentItem="Doctor" ChildItems={DoctorChilditemss}></DropDownStack>
                     <DropDownStack parentItem="Appointments" ChildItems={ApointmentChilditemss}></DropDownStack>
                     <DropDownStack parentItem="Payments" ChildItems={PaymentChilditemss}></DropDownStack>
+                    <DropDownStack parentItem="Others" ChildItems={otheseChildren}></DropDownStack>
 
                 </ul>
             </div>

@@ -90,7 +90,7 @@ const AddDoctors = () =>{
                     </label>
 
                     <div className="label">
-                            <span className="label-text font-bold">Patients Pic</span>
+                            <span className="label-text font-bold">Doctors Pic</span>
                         </div>
                         <input type="file" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                     <input type="submit" value='Add Doctor' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
