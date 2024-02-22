@@ -1,71 +1,58 @@
 import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
+import Swal from 'sweetalert2'
 
 const Addpatients = () => {
 
 
     const secureAxious = useAxious()
 
-    const handleSubmit = event =>{
-        event.preventDefault()
+    const handleSubmit = event => {
+        event.preventDefault();
+
         const form = event.target;
-        const full_name = form.name.value;
-        const date_of_birth = form.dob.value;
-        const age = form.age.value;
-        const phone = form.phone.value;
-        const email = form.email.value;
-        const gender = form.gender.value;
-        const full_address = form.address.value;
-        const details = form.details.value;
-        const patients_pic = form.patient_pic.files[0];
+        const formData = new FormData();
 
-        const patientsDetails = {
-            full_name,
-            date_of_birth,
-            age,
-            phone,
-            email,
-            gender,
-            full_address,
-            details,
-            patients_pic
-        }
+        console.log(formData)
 
-        console.log(patients_pic)
-
-        // const { data } = useQuery({
-        //     queryKey: ['new_patients'],
-        //     queryFn: async () => {
-        //         const res = await secureAxious.post('/patients/patients/', patientsDetails);
-        //         return res.data;
-        //     }
-        // });
-
-        // console.log(data)
-
-        // secureAxious.post('/patients/patients/', 
-        //  {patientsDetails},
-        
-        // {
-        // headers: {'Content-Type': 'application/json'}
-        // }
-        // )
-
-        fetch('http://127.0.0.1:8000/patients/patients/', {
-            method: 'POST',
-            headers : {
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(patientsDetails)
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-        })
+        formData.append('full_name', form.name.value);
+        formData.append('date_of_birth', form.dob.value);
+        formData.append('age', form.age.value);
+        formData.append('phone', form.phone.value);
+        formData.append('email', form.email.value);
+        formData.append('gender', form.gender.value);
+        formData.append('full_address', form.address.value);
+        formData.append('details', form.details.value);
+        formData.append('patients_pic', form.patients_pic.files[0]);
 
 
 
+        secureAxious.post('/patients/patients/', formData)
+            .then(res => {
+                if (res.data.message) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Patients successfully admited",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    form.reset()
+                }
+                else{
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "error",
+                        title: "Patients not added, something wrong!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+            .catch(()=>{
+                alert(error.message)
+            })
     }
 
 
@@ -75,7 +62,7 @@ const Addpatients = () => {
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
                 <hr />
-                <form className="mt-4" encType='multipart/form-data'  onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} encType="multipart/form-data" className="mt-4">
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
                         <label className="form-control w-full">
                             <div className="label">
@@ -141,9 +128,9 @@ const Addpatients = () => {
                     </label>
 
                     <div className="label">
-                            <span className="label-text font-bold">Patients Pic</span>
-                        </div>
-                        <input type="file" name="patient_pic" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                        <span className="label-text font-bold">Patients Pic</span>
+                    </div>
+                    <input type="file" name="patients_pic" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                     <input type="submit" value='Add Patients' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
                 </form>
             </div>
