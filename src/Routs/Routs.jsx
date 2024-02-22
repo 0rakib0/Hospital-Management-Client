@@ -9,6 +9,7 @@ import AllPatients from "../Pages/Patients/All_patients";
 import TretmentsPatients from "../Pages/Patients/TrenmentsPatients";
 import Discharge from "../Pages/Patients/discharge";
 import AddDoctors from "../Pages/Doctors/AddDoctors";
+import Update_patients from "../Pages/Patients/UpdatePatients";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         {
           path: '/add-dostors/',
           element: <AddDoctors></AddDoctors>
+        },
+        {
+          path:'/update-patients/:id',
+          element: <Update_patients></Update_patients>
         }
       ]
     },
