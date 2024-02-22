@@ -7,7 +7,7 @@ const TretmentsPatients = () =>{
 
     const secureAxious = useAxious()
 
-    const { data: patients } = useQuery({
+    const { data: patients, refetch } = useQuery({
         queryKey: ['patients'],
         queryFn: async () => {
             const res = await secureAxious.get('/patients/in-treatment-patients/')
@@ -18,7 +18,7 @@ const TretmentsPatients = () =>{
     return (
         <div>
             <PageTitle title={'Treatment Patients'} mainPage='Patients' page={'Treatment Patients'}></PageTitle>
-            <DataTable patients={patients}></DataTable>
+            <DataTable patients={patients} refetch={refetch}></DataTable>
         </div>
     )
 }

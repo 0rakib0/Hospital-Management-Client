@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxious from "../../Hook/SecureAxious";
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const Update_patients = () =>{
 
@@ -27,19 +28,11 @@ const Update_patients = () =>{
         
         const patients_pic = form.patients_pic.files[0];
         if (patients_pic) {
-            console.log('---------------')
             formData.append('patients_pic', patients_pic);
         }
-        console.log(formData)
-
-
-
-
 
         secureAxious.put(`/patients/patients/${patientsId}/`, formData)
             .then(res => {
-
-                console.log(res.data)
                 if (res.data.message) {
                     Swal.fire({
                         position: "top-end",
@@ -60,7 +53,7 @@ const Update_patients = () =>{
                     });
                 }
             })
-            .catch(()=>{
+            .catch((error)=>{
                 alert(error.message)
             })
     }
