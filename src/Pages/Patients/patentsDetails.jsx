@@ -25,6 +25,9 @@ const PatientsDetails = () => {
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="lg:w-6/12 bg-white">
                         <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Details</p>
+                        <div className="bg-primaryColor w-[15rem] h-[15rem] overflow-hidden ml-6 mt-4">
+                            <img src={'http://127.0.0.1:8000' + patient?.patients_pic} className="w-full" alt="" />
+                        </div>
                         <div className="overflow-x-auto my-4 ">
                             <table className="table">
                                 <tbody>
@@ -114,38 +117,37 @@ const PatientsDetails = () => {
                             </table>
                         </div>
                     </div>
-                    <div className="bg-white lg:w-6/12 p-2">
+                    <div className="bg-white lg:w-6/12 p-2 overflow-x-scroll">
                         <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Visits</p>
                         <table className="table">
                             {/* head */}
-                            <thead>
+                            <thead className="bg-gray-100">
                                 <tr className="border text-lg text-center">
-                                    <th className="border">Doctor Name</th>
-                                    <th className="border">Cost</th>
-                                    <th className="border">Visit Date</th>
-                                    <th className="border">Status</th>
+                                    <th className="border px-4 py-2">Doctor Name</th>
+                                    <th className="border px-4 py-2">Cost</th>
+                                    <th className="border px-4 py-2">Visit Date</th>
+                                    <th className="border px-4 py-2">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className="border">
+                                <tr className="border">
+                                    <td className="border px-4 py-2">
                                         John Dev
                                     </td>
-                                    <td className="border">
+                                    <td className="border px-4 py-2">
                                         $30
                                     </td>
-                                    <td className="border">01-02-2002</td>
-                                    <td className="border">Oparation</td>
+                                    <td className="border px-4 py-2">01-02-2002</td>
+                                    <td className="border px-4 py-2">Oparation</td>
                                 </tr>
-
                             </tbody>
-
                         </table>
+
                     </div>
                 </div>
             </div>
             <div>
-                <div className="mt-4 bg-white p-2">
+                <div className="mt-4 bg-white p-4 overflow-x-scroll">
                     <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Payment Transactions</p>
                     <table className="table">
                         {/* head */}
@@ -163,7 +165,9 @@ const PatientsDetails = () => {
                                 <td className="border">02-02-2002</td>
                                 <td className="border">100$</td>
                                 <td className="border">Cash</td>
-                                <td className="border">FounloadCV</td>
+                                <td className="border">
+                                    <p className="bg-primaryColor text-center text-white lg:w-3/5 mx-auto p-2">Download Invoice</p>
+                                </td>
                                 <td className="border">Oparation</td>
                             </tr>
 
