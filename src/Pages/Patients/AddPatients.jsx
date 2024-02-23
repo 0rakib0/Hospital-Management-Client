@@ -12,9 +12,9 @@ const Addpatients = () => {
         event.preventDefault();
 
         const form = event.target;
-        const formData = new FormData();
-
-        console.log(formData)
+        const formData = new FormData(); 
+        
+     
 
         formData.append('full_name', form.name.value);
         formData.append('date_of_birth', form.dob.value);
@@ -25,6 +25,8 @@ const Addpatients = () => {
         formData.append('full_address', form.address.value);
         formData.append('details', form.details.value);
         formData.append('patients_pic', form.patients_pic.files[0]);
+
+       
 
 
 
