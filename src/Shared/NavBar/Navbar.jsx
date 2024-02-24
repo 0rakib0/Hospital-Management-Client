@@ -14,7 +14,7 @@ const NavBar = () => {
     const DoctorChilditemss =
         <>
             <li className="hover:text-white"><Link to='/add-dostors/'>Add Doctor</Link></li>
-            <li className="hover:text-white"><Link>All Doctor</Link></li>
+            <li className="hover:text-white"><Link to='/all-doctors/'>All Doctor</Link></li>
             <li className="hover:text-white"><Link>Doctor Details</Link></li>
             <li className="hover:text-white"><Link>Edit Doctor</Link></li>
         </>

@@ -11,6 +11,8 @@ import Discharge from "../Pages/Patients/discharge";
 import AddDoctors from "../Pages/Doctors/AddDoctors";
 import Update_patients from "../Pages/Patients/UpdatePatients";
 import PatientsDetails from "../Pages/Patients/patentsDetails";
+import AllDoctors from "../Pages/Doctors/AllDoctors";
+import UpdateDoctor from "../Pages/Doctors/UpdateDoctor";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
         {
           path:'/patient-details/:id',
           element: <PatientsDetails></PatientsDetails>
+        },
+        {
+          path:'/all-doctors/',
+          element: <AllDoctors></AllDoctors>
+        },
+        {
+          path:'/update-doctor/:id',
+          element: <UpdateDoctor></UpdateDoctor>
         }
       ]
     },
