@@ -1,15 +1,18 @@
+import Swal from "sweetalert2"
+import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 
 const AddDoctors = () =>{
 
 
+    const secureAxious = useAxious()
+
     const handleSubmit = event =>{
         event.preventDefault()
         const form = event.target;
-
-        console.log(form.doctorName.value)
-        
         const formData = new FormData()
+
+
         formData.append('doctorName', form.doctorName.value)
         formData.append('date_of_birth', form.date_of_birth.value)
         formData.append('speacialization', form.speacialization.value)
@@ -22,7 +25,33 @@ const AddDoctors = () =>{
         formData.append('doctor_details', form.doctor_details.value)
         formData.append('doctor_pic', form.doctor_pic.files[0])
 
-        console.log(formData)
+        secureAxious.post('/doctors/', formData)
+        .then(res =>{
+            if (res.data.message) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Patients successfully admited",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset()
+            }
+            else{
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Patients not added, something wrong!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        })
+        .catch((error)=>{
+            alert(error.message)
+        })
+
+        
 
     }
     return (
@@ -31,7 +60,7 @@ const AddDoctors = () =>{
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Add Doctors</h4>
                 <hr />
-                <form className="mt-4" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} encType="multipart/form-data" className="mt-4">
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
                         <label className="form-control w-full">
                             <div className="label">
