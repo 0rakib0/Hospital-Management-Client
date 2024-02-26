@@ -8,7 +8,9 @@ const DoctorsData = ({ doctors, refetch }) => {
 
     const secureAxious = useAxious()
 
+
     const handleDelete = (id) => {
+        console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You want to delete this paients?",
@@ -19,12 +21,13 @@ const DoctorsData = ({ doctors, refetch }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                secureAxious.delete(`/patients/patients/${id}/`)
+                secureAxious.delete(`/doctors/${id}/`)
                     .then(res => {
+                        console.log(res.data)
                         if (res.data.message) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Patients Successfullt Deleted!",
+                                text: "Doctor Successfullt Deleted!",
                                 icon: "success"
                             });
                         }
@@ -79,7 +82,7 @@ const DoctorsData = ({ doctors, refetch }) => {
 
                             <th className="border flex items-center justify-center gap-2 text-xl">
                                 <div className="bg-blue-400 p-1 text-white rounded-md">
-                                    <Link to={`/update-doctor/${doctor.id}`}><FaEye></FaEye></Link>
+                                    <Link to={`/doctor-details/${doctor.id}`}><FaEye></FaEye></Link>
                                 </div>
                                 
                                 <div className="bg-green-400 p-1 text-white rounded-md">

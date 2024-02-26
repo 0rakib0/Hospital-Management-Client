@@ -13,6 +13,7 @@ import Update_patients from "../Pages/Patients/UpdatePatients";
 import PatientsDetails from "../Pages/Patients/patentsDetails";
 import AllDoctors from "../Pages/Doctors/AllDoctors";
 import UpdateDoctor from "../Pages/Doctors/UpdateDoctor";
+import DoctorDetail from "../Pages/Doctors/doctorDetails";
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         {
           path:'/update-doctor/:id',
           element: <UpdateDoctor></UpdateDoctor>
+        },
+        {
+          path:'/doctor-details/:id',
+          element: <DoctorDetail></DoctorDetail>
         }
       ]
     },

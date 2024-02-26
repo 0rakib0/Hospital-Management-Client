@@ -16,6 +16,9 @@ const AllDoctors = () =>{
         }
     })
 
+    
+   
+
     return (
         <div>
             <PageTitle title={'All Doctors'} mainPage='Doctors' page={'All Doctors'}></PageTitle>
