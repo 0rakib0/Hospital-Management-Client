@@ -21,27 +21,33 @@ const AddPayment = () => {
         e.preventDefault()
         const form = e.target;
 
-        const paytient = form.paytient.value
-        const paytientId = form.paytientId.value
-        const email = form.email.value 
+        const patient = form.paytient.value
+        const patientId = form.paytientId.value
+        const patientEmail = form.email.value 
         const department = form.department.value
         const service = form.service.value
         const paymentType = form.paymentType.value
-        const CostOfTretment = form.CostOfTretment.value
-        const cardCheck = form.cardCheck.value
+        const costOfTreatment = form.CostOfTretment.value
+        const chardOrChackNo = form.cardCheck.value
 
         const PaymentInfo = {
-            paytient,
-            paytientId,
-            email,
+            patient,
+            patientId,
+            patientEmail,
             department,
             service,
             paymentType,
-            CostOfTretment,
-            cardCheck
+            costOfTreatment,
+            chardOrChackNo
         }
 
-        console.log(PaymentInfo)
+        secureAxious.post('/payments/', PaymentInfo)
+        .then(res =>{
+            console.log(res.data)
+        })
+        .catch(error =>{
+            alert(error.message)
+        })
     }
 
 
@@ -57,10 +63,10 @@ const AddPayment = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Patients Name </span>
                             </div>
-                            <select name="paytient" onChange={(e) => setPaytientID(e.target.value)} className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
+                            <select name="paytient" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
                                 <option className="mt-2" value="" selected hidden>SELECT PAYTIENTS</option>
                                 {
-                                    paytients?.map(paytient =><option key={paytient.id} value={paytient.patients_Id}>{paytient.full_name}</option>)
+                                    paytients?.map(paytient =><option key={paytient.id} value={paytient.id}>{paytient.full_name}</option>)
                                 }
                                 
                                 
@@ -71,7 +77,7 @@ const AddPayment = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Paytient ID</span>
                             </div>
-                            <input type="text" readOnly name="paytientId" placeholder="Paytient ID" defaultValue={paytientId} className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <input type="text" name="paytientId" placeholder="Paytient ID" defaultValue={paytientId} className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
