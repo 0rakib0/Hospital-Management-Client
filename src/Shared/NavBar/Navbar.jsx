@@ -29,7 +29,7 @@ const NavBar = () => {
 
     const PaymentChilditemss =
         <>
-            <li className="hover:"><Link>Add Payment</Link></li>
+            <li className="hover:"><Link to='/add-payment/'>Add Payment</Link></li>
             <li className="hover:text-white"><Link>Payment Report</Link></li>
         </>
 

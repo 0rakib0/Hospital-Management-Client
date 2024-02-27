@@ -14,6 +14,7 @@ import PatientsDetails from "../Pages/Patients/patentsDetails";
 import AllDoctors from "../Pages/Doctors/AllDoctors";
 import UpdateDoctor from "../Pages/Doctors/UpdateDoctor";
 import DoctorDetail from "../Pages/Doctors/doctorDetails";
+import AddPayment from "../Pages/AddPayment/AddPayment";
 
 const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
         {
           path:'/doctor-details/:id',
           element: <DoctorDetail></DoctorDetail>
+        },
+        {
+          path:'/add-payment/',
+          element: <AddPayment></AddPayment>
         }
       ]
     },
