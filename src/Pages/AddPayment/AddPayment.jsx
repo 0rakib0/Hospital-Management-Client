@@ -30,8 +30,18 @@ const AddPayment = () => {
         const CostOfTretment = form.CostOfTretment.value
         const cardCheck = form.cardCheck.value
 
-        
+        const PaymentInfo = {
+            paytient,
+            paytientId,
+            email,
+            department,
+            service,
+            paymentType,
+            CostOfTretment,
+            cardCheck
+        }
 
+        console.log(PaymentInfo)
     }
 
 
@@ -41,7 +51,7 @@ const AddPayment = () => {
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
                 <hr />
-                <form encType="multipart/form-data" className="mt-4">
+                <form onSubmit={handleSubmit} className="mt-4">
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
                         <label className="form-control w-full">
                             <div className="label">
