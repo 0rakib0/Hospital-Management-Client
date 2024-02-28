@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useState } from "react"
+import Swal from "sweetalert2"
 
 const AddPayment = () => {
 
@@ -44,7 +45,25 @@ const AddPayment = () => {
 
         secureAxious.post('/payments/', PaymentInfo)
         .then(res =>{
-            console.log(res.data)
+            if (res.data.message) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Payment Success",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset()
+            }
+            else{
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Payment not complate, something wrong!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
         })
         .catch(error =>{
             alert(error.message)

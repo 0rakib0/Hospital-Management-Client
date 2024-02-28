@@ -33,7 +33,7 @@ const PaymentList = () => {
                             <th className="border">Payment System</th>
                             <th className="border">Payment</th>
                             <th className="border">Card/Ckeck No</th>
-                            <th className="border">Action</th>
+                            <th className="border">Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,8 +49,10 @@ const PaymentList = () => {
                                     <td className="border">{payment?.department}</td>
                                     <td className="border">{payment?.service}</td>
                                     <td className="border">{payment?.paymentType}</td>
-                                    <td className="border">{payment?.costOfTreatment}</td>
-                                    <td className="border">{payment?.chardOrChackNo}</td>
+                                    <td className="border">{payment?.costOfTreatment} &#2547;</td>
+                                    {payment?.chardOrChackNo?<td className="">{payment?.chardOrChackNo}</td>
+                                    : <td className="">Cash payment</td>
+                                    }
                                     <td className="border">
                                         {/* Format the date here */}
                                         {

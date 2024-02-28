@@ -18,6 +18,16 @@ const PatientsDetails = () => {
         }
     })
 
+    const { data: payments } = useQuery({
+        queryKey: ['payments', patientsId],
+        queryFn: async () => {
+            const res = await secureAxious.get(`/payments/${patientsId}`)
+            return res.data
+        }
+    })
+
+    console.log(payments)
+
     return (
         <div>
             <PageTitle title='Patient Details' mainPage='Patients' page='Patient Details'></PageTitle>
@@ -153,23 +163,46 @@ const PatientsDetails = () => {
                         {/* head */}
                         <thead>
                             <tr className="border text-lg">
-                                <th className="border">Date</th>
-                                <th className="border">Cost</th>
+                                <th className="border">Payment Date</th>
+                                <th className="border">Total Cost</th>
                                 <th className="border">Payment Type</th>
-                                <th className="border">Invoice</th>
-                                <th className="border">Status</th>
+                                <th className="border">Cash/Check No</th>
+                                <th className="border">Service</th>
+                                <th className="border">Department</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="border">02-02-2002</td>
-                                <td className="border">100$</td>
-                                <td className="border">Cash</td>
-                                <td className="border">
-                                    <p className="bg-primaryColor text-center text-white lg:w-3/5 mx-auto p-2">Download Invoice</p>
-                                </td>
-                                <td className="border">Oparation</td>
-                            </tr>
+                            {
+                                payments?.map(payment => <tr key={payment.id}>
+                                    <td className="border">
+                                        <td>
+                                            {/* Format the date here */}
+                                            {
+                                                payment?.createdAtt &&
+                                                (() => {
+                                                    const date = new Date(payment.createdAtt);
+                                                    const formattedDate = date.toLocaleDateString("en-US", {
+                                                        day: "2-digit",
+                                                        month: "short",
+                                                        year: "numeric"
+                                                    });
+                                                    return formattedDate;
+                                                })()
+                                            }
+                                        </td>
+                                    </td>
+                                    <td className="border">{payment?.costOfTreatment}</td>
+                                    <td className="border">{payment?.paymentType}</td>
+                                    <td className="">
+                                        {payment?.chardOrChackNo ? <td className="">{payment?.chardOrChackNo}</td>
+                                            : <td className="">Cash payment</td>
+                                        }
+                                    </td>
+                                    <td className="border">{payment?.service}</td>
+                                    <td className="border">{payment?.department}</td>
+                                </tr>)
+                            }
+
 
                         </tbody>
 
