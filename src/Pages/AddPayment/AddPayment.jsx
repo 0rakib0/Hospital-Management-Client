@@ -29,9 +29,10 @@ const AddPayment = () => {
         const paymentType = form.paymentType.value
         const costOfTreatment = form.CostOfTretment.value
         const chardOrChackNo = form.cardCheck.value
+        console.log(patient)
 
         const PaymentInfo = {
-            patient,
+            patient ,
             patientId,
             patientEmail,
             department,
