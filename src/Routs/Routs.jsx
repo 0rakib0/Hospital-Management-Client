@@ -15,6 +15,7 @@ import AllDoctors from "../Pages/Doctors/AllDoctors";
 import UpdateDoctor from "../Pages/Doctors/UpdateDoctor";
 import DoctorDetail from "../Pages/Doctors/doctorDetails";
 import AddPayment from "../Pages/AddPayment/AddPayment";
+import PaymentList from "../Pages/PaymentList/PaymentList";
 
 const router = createBrowserRouter([
     {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         {
           path:'/add-payment/',
           element: <AddPayment></AddPayment>
+        },
+        {
+          path:'/payment-list/',
+          element: <PaymentList></PaymentList>
         }
       ]
     },

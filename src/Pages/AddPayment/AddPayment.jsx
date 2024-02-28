@@ -52,6 +52,12 @@ const AddPayment = () => {
     }
 
 
+    const handlePatientId = (patientID) =>{
+        const PatientsId = paytients.find(patients => patients.id == patientID)
+        setPaytientID(PatientsId.patients_Id)
+    }
+
+
     return (
         <div>
             <PageTitle title='Add Payment' mainPage='Payment' page='Add Payment'></PageTitle>
@@ -64,7 +70,7 @@ const AddPayment = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Patients Name </span>
                             </div>
-                            <select name="paytient" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
+                            <select name="paytient" onChange={(e) => handlePatientId(e.target.value)} className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
                                 <option className="mt-2" value="" selected hidden>SELECT PAYTIENTS</option>
                                 {
                                     paytients?.map(paytient =><option key={paytient.id} value={paytient.id}>{paytient.full_name}</option>)
@@ -78,7 +84,7 @@ const AddPayment = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Paytient ID</span>
                             </div>
-                            <input type="text" name="paytientId" placeholder="Paytient ID" defaultValue={paytientId} className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <input type="text" name="paytientId" readOnly placeholder="Paytient ID" defaultValue={paytientId} className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">

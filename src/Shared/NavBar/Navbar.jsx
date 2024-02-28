@@ -30,7 +30,7 @@ const NavBar = () => {
     const PaymentChilditemss =
         <>
             <li className="hover:"><Link to='/add-payment/'>Add Payment</Link></li>
-            <li className="hover:text-white"><Link>Payment Report</Link></li>
+            <li className="hover:text-white"><Link to='/payment-list/'>Payment Report</Link></li>
         </>
 
     const otheseChildren =
