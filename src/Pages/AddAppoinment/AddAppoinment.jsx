@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
+import Swal from "sweetalert2"
 
 const AddAppoinment = () => {
 
@@ -24,6 +25,57 @@ const AddAppoinment = () => {
     })
 
 
+    const handleubmit = e =>{
+        e.preventDefault()
+        const form = e.target
+        const patient = form.patientId.value;
+        const doctor = form.doctor.value;
+        const department = form.department.value
+        const appoinmentDate = form.appoinemtDate.value
+        const timeSlot = form.timeSlot.value
+        const problems = form.problem.value
+        
+        const AppoinmentInfo = {
+            patient,
+            doctor,
+            department,
+            appoinmentDate,
+            timeSlot,
+            problems
+        }
+
+        console.log(AppoinmentInfo)
+
+        secureAxious.post('/appoinment/', AppoinmentInfo)
+        .then(res =>{
+            if (res.data.message) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Appoinment request successfully sent",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset()
+            }
+            else{
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Appoinment request not sent, something wrong!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        })
+        .catch(error =>{
+            alert(error.message)
+        })
+
+
+    }
+
+
 
 
     return (
@@ -32,13 +84,13 @@ const AddAppoinment = () => {
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
                 <hr />
-                <form className="mt-4">
+                <form className="mt-4" onSubmit={handleubmit}>
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text font-bold">Patients Name </span>
                             </div>
-                            <select name="paytient" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
+                            <select name="patientId" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
                                 <option className="mt-2" value="" selected hidden>SELECT PATIENTS</option>
                                 {
                                     paytients?.map(paytient => <option key={paytient.id} value={paytient.id}>{paytient.full_name}</option>)
@@ -50,7 +102,7 @@ const AddAppoinment = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Doctor Name </span>
                             </div>
-                            <select name="paytient" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
+                            <select name="doctor" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
                                 <option className="mt-2" value="" selected hidden>SELECT DOCTOR</option>
                                 {
                                     doctors?.map(doctor => <option key={doctor.id} value={doctor.id}>{doctor.doctorName}</option>)
