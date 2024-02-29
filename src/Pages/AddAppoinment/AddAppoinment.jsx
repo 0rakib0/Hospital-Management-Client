@@ -134,7 +134,7 @@ const AddAppoinment = () => {
                             <div className="label">
                                 <span className="label-text font-bold">Time Slot</span>
                             </div>
-                            <input type="text" name="timeSlot" placeholder="Appoinment Time" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <input type="text" name="timeSlot" placeholder="00:00 AM/PM" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">

@@ -17,6 +17,7 @@ import DoctorDetail from "../Pages/Doctors/doctorDetails";
 import AddPayment from "../Pages/AddPayment/AddPayment";
 import PaymentList from "../Pages/PaymentList/PaymentList";
 import AddAppoinment from "../Pages/AddAppoinment/AddAppoinment";
+import AppoinmentList from "../Pages/AppoinmentList/AppoinmentList";
 
 const router = createBrowserRouter([
     {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
         {
           path:'/add-appoinment/',
           element: <AddAppoinment></AddAppoinment>
+        },
+        {
+          path:'/appoinment-list/',
+          element: <AppoinmentList></AppoinmentList>
         }
       ]
     },
