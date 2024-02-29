@@ -1,6 +1,31 @@
+import { useQuery } from "@tanstack/react-query"
+import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 
 const AddAppoinment = () => {
+
+
+    const secureAxious = useAxious()
+
+    const {data:paytients} = useQuery({
+        queryKey:['paytients'],
+        queryFn: async () =>{
+            const res = await secureAxious.get('/patients/patients/')
+            return res.data
+        }
+    })
+
+    const {data:doctors} = useQuery({
+        queryKey:['doctors'],
+        queryFn: async () =>{
+            const res = await secureAxious.get('/doctors/')
+            return res.data
+        }
+    })
+
+
+
+
     return (
         <div>
             <PageTitle title='Add Appoinment' mainPage='Appoinment' page='Add Appoinment'></PageTitle>
@@ -14,29 +39,32 @@ const AddAppoinment = () => {
                                 <span className="label-text font-bold">Patients Name </span>
                             </div>
                             <select name="paytient" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
-                                <option className="mt-2" value="" selected hidden>SELECT PAYTIENTS</option>
-                                {/* {
+                                <option className="mt-2" value="" selected hidden>SELECT PATIENTS</option>
+                                {
                                     paytients?.map(paytient => <option key={paytient.id} value={paytient.id}>{paytient.full_name}</option>)
-                                } */}
-
-
+                                }
                             </select>
                         </label>
 
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text font-bold">Paytient ID</span>
+                                <span className="label-text font-bold">Doctor Name </span>
                             </div>
-                            <input type="text" name="paytientId" readOnly placeholder="Paytient ID"  className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <select name="paytient" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
+                                <option className="mt-2" value="" selected hidden>SELECT DOCTOR</option>
+                                {
+                                    doctors?.map(doctor => <option key={doctor.id} value={doctor.id}>{doctor.doctorName}</option>)
+                                }
+                            </select>
                         </label>
                     </div>
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
 
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text font-bold">Patient Email</span>
+                                <span className="label-text font-bold">Appoinment Date</span>
                             </div>
-                            <input type="text" name="email" placeholder="Email Address" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <input type="date" name="appoinemtDate" placeholder="Appoinment Date" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
 
                         <label className="form-control w-full">
@@ -54,35 +82,15 @@ const AddAppoinment = () => {
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text font-bold">Service Name</span>
+                                <span className="label-text font-bold">Time Slot</span>
                             </div>
-                            <input type="text" name="service" placeholder="Service Name" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
-                        </label>
-
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text font-bold">Payment Type</span>
-                            </div>
-                            <select name="paymentType" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
-                                <option className="mt-2" value="" selected hidden>SELECT PAYMENT TYPE</option>
-                                <option value="Check">Check</option>
-                                <option value="Card">Card</option>
-                                <option value="Cash">Cash</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text font-bold">Cost of Treatment</span>
-                            </div>
-                            <input type="number" name="CostOfTretment" placeholder="Cost Of Payment" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <input type="text" name="timeSlot" placeholder="Appoinment Time" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text font-bold">Card/Check No</span>
+                                <span className="label-text font-bold">Problem</span>
                             </div>
-                            <input type="text" name="cardCheck" placeholder="Card Or Check No" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                            <input type="text" name="problem" placeholder="Problem" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
                     <input type="submit" value='Add Payment' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
