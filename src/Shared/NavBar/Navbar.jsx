@@ -21,7 +21,7 @@ const NavBar = () => {
 
     const ApointmentChilditemss =
         <>
-            <li className="hover:"><Link>Add Apointment</Link></li>
+            <li className="hover:"><Link to='/add-appoinment/'>Add Apointment</Link></li>
             <li className="hover:text-white"><Link>All Appointment</Link></li>
             <li className="hover:text-white"><Link>Appointment Details</Link></li>
             <li className="hover:text-white"><Link>Edit Appointment</Link></li>
