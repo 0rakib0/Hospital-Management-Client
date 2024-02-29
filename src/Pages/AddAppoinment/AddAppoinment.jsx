@@ -44,8 +44,6 @@ const AddAppoinment = () => {
             problems
         }
 
-        console.log(AppoinmentInfo)
-
         secureAxious.post('/appoinment/', AppoinmentInfo)
         .then(res =>{
             if (res.data.message) {
