@@ -38,12 +38,10 @@ const AppoinmentList = () => {
                             appoinments?.map(appoinment => (
                                 <tr key={appoinment.id}>
                                     <td className="border">
-                                        <p>Patients Name</p>
-                                        {/* <p>{payment?.patientId}</p> */}
+                                        <p>{appoinment?.patient?.full_name}</p>
                                     </td>
                                     <td className="border">
-                                        <p>Doctor Name</p>
-                                        {/* <p>{payment?.patientEmail}</p> */}
+                                        <p>{appoinment?.doctor?.doctorName}</p>
                                     </td>
                                     <td className="border">
                                         {/* Format the date here */}
@@ -69,8 +67,6 @@ const AppoinmentList = () => {
                                         ) : (
                                         <td className="border bg-blue-400 text-white">{appoinment?.approveStatus}</td>
                                     )}
-                                    <td className="border">{appoinment?.approveStatus}</td>
-
 
                                     <th className="border flex items-center justify-center gap-2 text-xl">
                                         <div className="bg-blue-400 p-1 text-white rounded-md">

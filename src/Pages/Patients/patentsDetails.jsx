@@ -26,6 +26,14 @@ const PatientsDetails = () => {
         }
     })
 
+    const {data:PatientAppoinment} = useQuery({
+        queryKey: ['PatientAppoinment', patientsId],
+        queryFn: async () =>{
+            const res = await secureAxious.get(`/appoinment/${patientsId}`)
+            return res.data
+        }
+    })
+
     console.log(payments)
 
     return (
@@ -128,28 +136,49 @@ const PatientsDetails = () => {
                         </div>
                     </div>
                     <div className="bg-white lg:w-6/12 p-2 overflow-x-scroll">
-                        <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Visits</p>
+                        <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Appoinmet Details</p>
                         <table className="table">
                             {/* head */}
                             <thead className="bg-gray-100">
                                 <tr className="border text-lg text-center">
                                     <th className="border px-4 py-2">Doctor Name</th>
-                                    <th className="border px-4 py-2">Cost</th>
-                                    <th className="border px-4 py-2">Visit Date</th>
+                                    <th className="border px-4 py-2">Date</th>
+                                    <th className="border px-4 py-2">Time</th>
                                     <th className="border px-4 py-2">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr className="border">
+                                {
+                                    PatientAppoinment?.map(pa => <tr key={pa.id} className="border">
                                     <td className="border px-4 py-2">
-                                        John Dev
+                                        {pa.doctor.doctorName}
                                     </td>
-                                    <td className="border px-4 py-2">
-                                        $30
+                                    <td className="border">
+                                        {/* Format the date here */}
+                                        {
+                                            pa?.appoinmentDate &&
+                                            (() => {
+                                                const date = new Date(pa.appoinmentDate);
+                                                const formattedDate = date.toLocaleDateString("en-US", {
+                                                    day: "2-digit",
+                                                    month: "short",
+                                                    year: "numeric"
+                                                });
+                                                return formattedDate;
+                                            })()
+                                        }
                                     </td>
-                                    <td className="border px-4 py-2">01-02-2002</td>
-                                    <td className="border px-4 py-2">Oparation</td>
-                                </tr>
+                                    <td className="border px-4 py-2">{pa.timeSlot}</td>
+                                    {pa?.approveStatus === 'Approved' ? (
+                                        <td className="border bg-green-400 text-white">{pa?.approveStatus}</td>
+                                    ): pa?.approveStatus === 'Rejected'? (
+                                        <td className="border bg-red-400 text-white">{pa?.approveStatus} </td>
+                                        ) : (
+                                        <td className="border bg-blue-400 text-white">{pa?.approveStatus}</td>
+                                    )}
+                                </tr>)
+                                }
+                                
                             </tbody>
                         </table>
 
