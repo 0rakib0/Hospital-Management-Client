@@ -18,6 +18,7 @@ import AddPayment from "../Pages/AddPayment/AddPayment";
 import PaymentList from "../Pages/PaymentList/PaymentList";
 import AddAppoinment from "../Pages/AddAppoinment/AddAppoinment";
 import AppoinmentList from "../Pages/AppoinmentList/AppoinmentList";
+import AppoinmentDetails from "../Pages/AppoinmentDetails/AppoinmentDetails";
 
 const router = createBrowserRouter([
     {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
         {
           path:'/appoinment-list/',
           element: <AppoinmentList></AppoinmentList>
+        },
+        {
+          path:'/appoinment-details/:id',
+          element: <AppoinmentDetails></AppoinmentDetails>
         }
       ]
     },

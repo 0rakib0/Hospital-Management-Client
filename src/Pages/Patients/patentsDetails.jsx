@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import { FaEye} from "react-icons/fa";
 
 const PatientsDetails = () => {
 
@@ -29,7 +30,7 @@ const PatientsDetails = () => {
     const {data:PatientAppoinment} = useQuery({
         queryKey: ['PatientAppoinment', patientsId],
         queryFn: async () =>{
-            const res = await secureAxious.get(`/appoinment/${patientsId}`)
+            const res = await secureAxious.get(`/patients-appoinment/${patientsId}`)
             return res.data
         }
     })
@@ -145,6 +146,7 @@ const PatientsDetails = () => {
                                     <th className="border px-4 py-2">Date</th>
                                     <th className="border px-4 py-2">Time</th>
                                     <th className="border px-4 py-2">Status</th>
+                                    <th className="border px-4 py-2">#</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -176,6 +178,7 @@ const PatientsDetails = () => {
                                         ) : (
                                         <td className="border bg-blue-400 text-white">{pa?.approveStatus}</td>
                                     )}
+                                    <td><Link to={`/appoinment-details/${pa.id}`}><FaEye className="text-xl text-blue-400"></FaEye></Link></td>
                                 </tr>)
                                 }
                                 

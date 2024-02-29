@@ -70,7 +70,7 @@ const AppoinmentList = () => {
 
                                     <th className="border flex items-center justify-center gap-2 text-xl">
                                         <div className="bg-blue-400 p-1 text-white rounded-md">
-                                            <Link><FaEye></FaEye></Link>
+                                            <Link to={`/appoinment-details/${appoinment.id}`}><FaEye></FaEye></Link>
                                         </div>
 
                                         <div className="bg-green-400 p-1 text-white rounded-md">
