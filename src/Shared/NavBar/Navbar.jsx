@@ -33,7 +33,7 @@ const NavBar = () => {
 
     const otheseChildren =
         <>
-            <li className="hover:"><Link>Add Notice</Link></li>
+            <li className="hover:"><Link to='/add-notification/'>Add Notice</Link></li>
             <li className="hover:text-white"><Link>Send Message</Link></li>
         </>
 

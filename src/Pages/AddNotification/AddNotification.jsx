@@ -1,0 +1,29 @@
+import PageTitle from "../../Shared/PageTitle/PageTitle"
+
+const AddNotification = () => {
+
+
+    const handleSubmit = e =>{
+        e.preventDefault()
+        const Notification = e.target.notification.value
+        console.log(Notification)
+    }
+
+
+    return (
+        <div>
+            <PageTitle title='Add New Notification' mainPage='Notification' page='Add New Notification'></PageTitle>
+            <form onSubmit={handleSubmit} className="mt-4">
+                    <label className="form-control w-full">
+                        <div className="label">
+                            <span className="label-text font-bold">Add New Notise</span>
+                        </div>
+                        <textarea name="notification" id="" cols="30" rows="10" className="focus:border-secondaryColor border border-primaryColor focus:outline-0 p-2 rounded-md"></textarea>
+                    </label>
+                <input type="submit" value='Add Notification' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
+            </form>
+        </div>
+    )
+}
+
+export default AddNotification

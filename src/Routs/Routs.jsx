@@ -19,6 +19,7 @@ import PaymentList from "../Pages/PaymentList/PaymentList";
 import AddAppoinment from "../Pages/AddAppoinment/AddAppoinment";
 import AppoinmentList from "../Pages/AppoinmentList/AppoinmentList";
 import AppoinmentDetails from "../Pages/AppoinmentDetails/AppoinmentDetails";
+import AddNotification from "../Pages/AddNotification/AddNotification";
 
 const router = createBrowserRouter([
     {
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
         {
           path:'/appoinment-details/:id',
           element: <AppoinmentDetails></AppoinmentDetails>
+        },
+        {
+          path:'/add-notification/',
+          element: <AddNotification></AddNotification>
         }
       ]
     },
