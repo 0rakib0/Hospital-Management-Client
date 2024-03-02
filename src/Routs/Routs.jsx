@@ -19,7 +19,8 @@ import PaymentList from "../Pages/PaymentList/PaymentList";
 import AddAppoinment from "../Pages/AddAppoinment/AddAppoinment";
 import AppoinmentList from "../Pages/AppoinmentList/AppoinmentList";
 import AppoinmentDetails from "../Pages/AppoinmentDetails/AppoinmentDetails";
-import AddNotification from "../Pages/AddNotification/AddNotification";
+import AddNotice from "../Pages/AddNotice/AddNotice";
+import AllNotice from "../Pages/AllNotice/AllNotice";
 
 const router = createBrowserRouter([
     {
@@ -91,8 +92,12 @@ const router = createBrowserRouter([
           element: <AppoinmentDetails></AppoinmentDetails>
         },
         {
-          path:'/add-notification/',
-          element: <AddNotification></AddNotification>
+          path:'/add-notice/',
+          element: <AddNotice></AddNotice>
+        },
+        {
+          path:'/all-notice/',
+          element: <AllNotice></AllNotice>
         }
       ]
     },

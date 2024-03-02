@@ -52,7 +52,7 @@ const Addpatients = () => {
                     });
                 }
             })
-            .catch(()=>{
+            .catch((error)=>{
                 alert(error.message)
             })
     }
