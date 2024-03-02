@@ -35,7 +35,8 @@ const NavBar = () => {
         <>
             <li className="hover:"><Link to='/add-notice/'>Add Notice</Link></li>
             <li className="hover:"><Link to='/all-notice/'>All Notice</Link></li>
-            <li className="hover:text-white"><Link>Send Message</Link></li>
+            <li className="hover:text-white"><Link to='/send-message/'>Send Message</Link></li>
+            <li className="hover:text-white"><Link to='/send-message/'>All Message</Link></li>
         </>
 
 
@@ -51,8 +52,8 @@ const NavBar = () => {
                     <DropDownStack parentItem="Patients" ChildItems={PatientChilditemss}></DropDownStack>
                     <DropDownStack parentItem="Doctor" ChildItems={DoctorChilditemss}></DropDownStack>
                     <DropDownStack parentItem="Appointments" ChildItems={ApointmentChilditemss}></DropDownStack>
+                    <DropDownStack parentItem="Admin control" ChildItems={otheseChildren}></DropDownStack>
                     <DropDownStack parentItem="Payments" ChildItems={PaymentChilditemss}></DropDownStack>
-                    <DropDownStack parentItem="Others" ChildItems={otheseChildren}></DropDownStack>
 
                 </ul>
             </div>
