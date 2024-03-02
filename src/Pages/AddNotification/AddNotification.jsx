@@ -2,11 +2,25 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 
 const AddNotification = () => {
 
+    const secureAxious = useAxious()
 
     const handleSubmit = e =>{
         e.preventDefault()
         const Notification = e.target.notification.value
-        console.log(Notification)
+        
+
+        const NewNotice = {
+            Notification
+        }
+
+        secureAxious.post('/notice/', NewNotice)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(error =>{
+            alert(error.message)
+        })
+        
     }
 
 
