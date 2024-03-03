@@ -3,18 +3,46 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import useAxious from "../../Hook/SecureAxious";
 import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const AllMessage = () => {
 
     const secureAxious = useAxious()
 
-    const {data:messages} = useQuery({
+    const {data:messages, refetch} = useQuery({
         queryKey:['message'],
         queryFn: async () =>{
             const res = await secureAxious.get('/messages/')
             return res.data
         }
     })
+
+
+    const handleDelete = id =>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want to delete this message?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                secureAxious.delete(`/messages/${id}/`)
+                    .then(res => {
+                        if (res.data.message) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Notice Successfullt Deleted!",
+                                icon: "success"
+                            });
+                        }
+                        refetch()
+                    })
+            }
+        });
+    }
 
 
     return (
@@ -67,7 +95,7 @@ const AllMessage = () => {
                                         }
                                     </td>
                                     <th className="border flex items-center justify-center gap-2 text-xl">
-                                        <div className="bg-red-400 p-1 text-white rounded-md">
+                                        <div onClick={() => handleDelete(msg.id)} className="bg-red-400 p-1 text-white rounded-md">
                                             <Link><FaTrash></FaTrash></Link>
                                         </div>
                                     </th>
