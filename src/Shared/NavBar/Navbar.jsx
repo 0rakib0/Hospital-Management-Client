@@ -36,7 +36,7 @@ const NavBar = () => {
             <li className="hover:"><Link to='/add-notice/'>Add Notice</Link></li>
             <li className="hover:"><Link to='/all-notice/'>All Notice</Link></li>
             <li className="hover:text-white"><Link to='/send-message/'>Send Message</Link></li>
-            <li className="hover:text-white"><Link to='/send-message/'>All Message</Link></li>
+            <li className="hover:text-white"><Link to='/all-message/'>All Message</Link></li>
         </>
 
 

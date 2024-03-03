@@ -22,6 +22,7 @@ import AppoinmentDetails from "../Pages/AppoinmentDetails/AppoinmentDetails";
 import AddNotice from "../Pages/AddNotice/AddNotice";
 import AllNotice from "../Pages/AllNotice/AllNotice";
 import SendMessage from "../Pages/SendMessage/SendMessage";
+import AllMessage from "../Pages/AllMessage/AllMessage";
 
 const router = createBrowserRouter([
     {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
         {
           path:'/send-message/',
           element: <SendMessage></SendMessage>
+        },
+        {
+          path:'/all-message/',
+          element:<AllMessage></AllMessage>
         }
       ]
     },
