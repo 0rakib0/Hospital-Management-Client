@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
+import Swal from "sweetalert2"
 
 const SendMessage = () => {
 
@@ -28,9 +29,29 @@ const SendMessage = () => {
             message
         }
         
+        console.log(messageData)
+
         secureAxious.post('/messages/', messageData)
         .then(res =>{
-            console.log(res.data)
+            if (res.data.message) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Massage Successfully Send!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset()
+            }
+            else{
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Message not sent, something wrong!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
         })
     }
 
