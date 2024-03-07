@@ -23,6 +23,7 @@ import AddNotice from "../Pages/AddNotice/AddNotice";
 import AllNotice from "../Pages/AllNotice/AllNotice";
 import SendMessage from "../Pages/SendMessage/SendMessage";
 import AllMessage from "../Pages/AllMessage/AllMessage";
+import LoginPage from "../Pages/LoginPage/LoginPage";
 
 const router = createBrowserRouter([
     {
@@ -108,6 +109,10 @@ const router = createBrowserRouter([
         {
           path:'/all-message/',
           element:<AllMessage></AllMessage>
+        },
+        {
+          path:'/login/',
+          element: <LoginPage></LoginPage>
         }
       ]
     },
