@@ -1,8 +1,11 @@
+import { Navigate, useNavigate } from "react-router-dom"
 import useAuth from "../../Hook/useAuth"
+import { useEffect } from "react"
 
 const LoginPage = () => {
 
-    const {Login} = useAuth()
+    const {Login, user} = useAuth()
+    const navigat = useNavigate()
 
     const handleSubmit = e =>{
         e.preventDefault()
@@ -12,6 +15,14 @@ const LoginPage = () => {
         console.log(email, password)
         Login(email, password)
     }
+
+
+    useEffect(() =>{
+        if (user){
+            navigat('/')
+        }
+    }, [user])
+   
 
     return (
         <div className="flex gap-4 py-6 px-4 rounded-lg my-6 bg-white">
