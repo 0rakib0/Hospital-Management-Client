@@ -9,7 +9,7 @@ const AuthProvider = ({children}) =>{
     const secureAxious = useAxious()
     const [loading, setLoading] = useState(false)
     const isTokenAvailable = localStorage.getItem('authToken')
-    const isUser = (JSON.parse(isTokenAvailable).access)
+    const isUser = (JSON.parse(isTokenAvailable)?.access)
     const [authToken, setAuthToken] = useState(isTokenAvailable ? JSON.parse(isTokenAvailable):null)
     const [user, setUser] = useState(isTokenAvailable? (jwtDecode(isUser).email):null)
     

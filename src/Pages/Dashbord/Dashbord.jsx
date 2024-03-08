@@ -5,7 +5,7 @@ import useAuth from "../../Hook/useAuth"
 const Dashbord = () =>{
 
     const asiouxSecure = useAxious()
-    const {username} = useAuth()
+    const {user} = useAuth()
 
     const {data} = useQuery({
         queryKey: ['patients'],
@@ -22,7 +22,7 @@ const Dashbord = () =>{
     return (
         <div>
             <h1 className="bg-primaryColor">THis os Dashbord section</h1>
-            {username}
+            {user&& user}
         </div>
     )
 }

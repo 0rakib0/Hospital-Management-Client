@@ -24,6 +24,7 @@ import AllNotice from "../Pages/AllNotice/AllNotice";
 import SendMessage from "../Pages/SendMessage/SendMessage";
 import AllMessage from "../Pages/AllMessage/AllMessage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
+import PrivatRouts from "./PrivatRouts";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/add-patients/',
-          element: <Addpatients></Addpatients>
+          element: <PrivatRouts><Addpatients></Addpatients></PrivatRouts>
         },
         {
           path:'/all-patients/',
