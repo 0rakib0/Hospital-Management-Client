@@ -5,7 +5,7 @@ import useAuth from "../../Hook/useAuth"
 const Dashbord = () =>{
 
     const asiouxSecure = useAxious()
-    const {user} = useAuth()
+    const {user, userInfo} = useAuth()
 
     const {data} = useQuery({
         queryKey: ['patients'],
@@ -17,7 +17,8 @@ const Dashbord = () =>{
       
     })
 
-    console.log(data)
+
+    console.log(userInfo)
 
     return (
         <div>
