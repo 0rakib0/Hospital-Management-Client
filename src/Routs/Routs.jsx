@@ -25,6 +25,7 @@ import SendMessage from "../Pages/SendMessage/SendMessage";
 import AllMessage from "../Pages/AllMessage/AllMessage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import PrivatRouts from "./PrivatRouts";
+import SignelPatientsInfo from "../Pages/Dashbord/PatientsDashbord";
 
 const router = createBrowserRouter([
     {
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
         {
           path:'/login/',
           element: <LoginPage></LoginPage>
+        },
+        {
+          path:'/single-patienst-info/',
+          element: <SignelPatientsInfo></SignelPatientsInfo>
         }
       ]
     },

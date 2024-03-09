@@ -10,12 +10,16 @@ const AuthProvider = ({children}) =>{
     const [loading, setLoading] = useState(false)
     const isTokenAvailable = localStorage.getItem('authToken')
     const isUser = (JSON.parse(isTokenAvailable)?.access)
-    const userId = (isTokenAvailable?(jwtDecode(isUser)?.user_id):null)
-
+    const [userId, setuserId] = useState(null)
     const [authToken, setAuthToken] = useState(isTokenAvailable ? JSON.parse(isTokenAvailable):null)
     const [user, setUser] = useState(isTokenAvailable? (jwtDecode(isUser).email):null)
     const [userInfo, setUserinfo] = useState(null)
     
+    useEffect(() =>{
+        if (isTokenAvailable){
+            setuserId((jwtDecode(isUser).user_id))
+        }
+    },[isTokenAvailable])
 
     const Login = (email, password) =>{
         secureAxious.post('auth/token/', {email, password})
@@ -37,10 +41,12 @@ const AuthProvider = ({children}) =>{
 
 
     useEffect(() =>{
-        secureAxious.get(`/user-info/${userId}`)
+        if (userId){
+            secureAxious.get(`/user-info/${userId}`)
         .then(res =>{
             setUserinfo(res.data)
         })
+        }
     }, [userId])
 
 

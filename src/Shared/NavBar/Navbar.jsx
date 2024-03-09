@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
 import DropDownStack from "./Dropdownstack"
+import useAuth from "../../Hook/useAuth"
 
 const NavBar = () => {
+
+
+    const {userInfo} = useAuth()
+
+    const userType = userInfo?.user_type
+    console.log(userType)
 
     const PatientChilditemss =
         <>
@@ -46,7 +53,7 @@ const NavBar = () => {
             <div className="mb-3 lg:mb-0 p-2">
                 <h4 className="text-4xl font-bold text-white">LOGO</h4>
             </div>
-            <div>
+        { userType == 'patients'? <div><li className="md:mt-1 text-white border py-1 px-4"><Link to='/single-patienst-info/'>Dashbord</Link></li></div> : <div>
                 <ul className="flex lg:items-center lg:flex-row flex-col lg:justify-center  relative gap-y-2 gap-x-6">
                     <li className="md:mt-1 text-white border py-1 px-4"><Link to=''>Dashbord</Link></li>
                     <DropDownStack parentItem="Patients" ChildItems={PatientChilditemss}></DropDownStack>
@@ -57,7 +64,7 @@ const NavBar = () => {
 
                 </ul>
             </div>
-
+        }
         </div>
     )
 }
