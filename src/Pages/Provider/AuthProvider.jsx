@@ -10,7 +10,7 @@ const AuthProvider = ({children}) =>{
     const [loading, setLoading] = useState(false)
     const isTokenAvailable = localStorage.getItem('authToken')
     const isUser = (JSON.parse(isTokenAvailable)?.access)
-    const userId = (jwtDecode(isUser).user_id)
+    const userId = (isTokenAvailable?(jwtDecode(isUser)?.user_id):null)
 
     const [authToken, setAuthToken] = useState(isTokenAvailable ? JSON.parse(isTokenAvailable):null)
     const [user, setUser] = useState(isTokenAvailable? (jwtDecode(isUser).email):null)

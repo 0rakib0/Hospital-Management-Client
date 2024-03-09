@@ -24,6 +24,7 @@ const Addpatients = () => {
         formData.append('gender', form.gender.value);
         formData.append('full_address', form.address.value);
         formData.append('details', form.details.value);
+        formData.append('password', form.password.value);
         formData.append('patients_pic', form.patients_pic.files[0]);
 
        
@@ -105,6 +106,20 @@ const Addpatients = () => {
 
                         <label className="form-control w-full">
                             <div className="label">
+                                <span className="label-text font-bold">Password</span>
+                            </div>
+                            <input type="password" name="password" placeholder="Enter Password" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                        </label>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
+                        <label className="form-control w-full">
+                            <div className="label">
+                                <span className="label-text font-bold">Full Address</span>
+                            </div>
+                            <input type="text" name="address" placeholder="Full Adress" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
+                        </label>
+                        <label className="form-control w-full">
+                            <div className="label">
                                 <span className="label-text font-bold">Gender</span>
                             </div>
                             <select name="gender" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" id="">
@@ -112,14 +127,6 @@ const Addpatients = () => {
                                 <option value="male">Male</option>
                                 <option value="male">Female</option>
                             </select>
-                        </label>
-                    </div>
-                    <div className="md:mb-6 md-4">
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text font-bold">Full Address</span>
-                            </div>
-                            <input type="text" name="address" placeholder="Full Adress" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
                     <label className="form-control w-full">
