@@ -26,6 +26,7 @@ import AllMessage from "../Pages/AllMessage/AllMessage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import PrivatRouts from "./PrivatRouts";
 import SignelPatientsInfo from "../Pages/Dashbord/PatientsDashbord";
+import DrReletedAppoinment from "../Pages/DrReletedAppoinment/DrReletedAppoinment";
 
 const router = createBrowserRouter([
     {
@@ -119,6 +120,10 @@ const router = createBrowserRouter([
         {
           path:'/single-patienst-info/',
           element: <SignelPatientsInfo></SignelPatientsInfo>
+        },
+        {
+          path:'/dr-eleted-appoinment/',
+          element: <DrReletedAppoinment></DrReletedAppoinment>
         }
       ]
     },

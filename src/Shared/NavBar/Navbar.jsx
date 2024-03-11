@@ -5,7 +5,7 @@ import useAuth from "../../Hook/useAuth"
 const NavBar = () => {
 
 
-    const {userInfo} = useAuth()
+    const { userInfo } = useAuth()
 
     const userType = userInfo?.user_type
     console.log(userType)
@@ -53,18 +53,30 @@ const NavBar = () => {
             <div className="mb-3 lg:mb-0 p-2">
                 <h4 className="text-4xl font-bold text-white">LOGO</h4>
             </div>
-        { userType == 'patients'? <div><li className="md:mt-1 text-white border py-1 px-4"><Link to='/single-patienst-info/'>Dashbord</Link></li></div> : <div>
-                <ul className="flex lg:items-center lg:flex-row flex-col lg:justify-center  relative gap-y-2 gap-x-6">
-                    <li className="md:mt-1 text-white border py-1 px-4"><Link to=''>Dashbord</Link></li>
-                    <DropDownStack parentItem="Patients" ChildItems={PatientChilditemss}></DropDownStack>
-                    <DropDownStack parentItem="Doctor" ChildItems={DoctorChilditemss}></DropDownStack>
-                    <DropDownStack parentItem="Appointments" ChildItems={ApointmentChilditemss}></DropDownStack>
-                    <DropDownStack parentItem="Admin control" ChildItems={otheseChildren}></DropDownStack>
-                    <DropDownStack parentItem="Payments" ChildItems={PaymentChilditemss}></DropDownStack>
+            {userType == 'patients' ? (
+                <div><li className="md:mt-1 text-white border py-1 px-4"><Link to='/single-patienst-info/'>Dashbord</Link></li></div>
+            ) : userType == 'doctor' ? (
+                <div>
+                    <Link to='/single-patienst-info/' className="md:mt-1 text-white border py-1 px-4">Dctor Dashbord</Link>
+                    <Link to='/dr-eleted-appoinment/' className="md:mt-1 text-white border py-1 px-4">Appoinment List</Link>
+                    <Link to='/single-patienst-info/' className="md:mt-1 text-white border py-1 px-4">Visits List</Link>
+                    <Link to='/single-patienst-info/' className="md:mt-1 text-white border py-1 px-4">Messages</Link>
+                </div>
+            ) : (
+                <div>
+                    <ul className="flex lg:items-center lg:flex-row flex-col lg:justify-center  relative gap-y-2 gap-x-6">
+                        <li className="md:mt-1 text-white border py-1 px-4"><Link to=''>Dashbord</Link></li>
+                        <DropDownStack parentItem="Patients" ChildItems={PatientChilditemss}></DropDownStack>
+                        <DropDownStack parentItem="Doctor" ChildItems={DoctorChilditemss}></DropDownStack>
+                        <DropDownStack parentItem="Appointments" ChildItems={ApointmentChilditemss}></DropDownStack>
+                        <DropDownStack parentItem="Admin control" ChildItems={otheseChildren}></DropDownStack>
+                        <DropDownStack parentItem="Payments" ChildItems={PaymentChilditemss}></DropDownStack>
 
-                </ul>
-            </div>
-        }
+                    </ul>
+                </div>
+            )
+
+            }
         </div>
     )
 }
