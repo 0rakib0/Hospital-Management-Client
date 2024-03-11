@@ -60,7 +60,7 @@ const NavBar = () => {
                     <Link to='/single-patienst-info/' className="md:mt-1 text-white border py-1 px-4">Dctor Dashbord</Link>
                     <Link to='/dr-eleted-appoinment/' className="md:mt-1 text-white border py-1 px-4">Appoinment List</Link>
                     <Link to='/single-patienst-info/' className="md:mt-1 text-white border py-1 px-4">Visits List</Link>
-                    <Link to='/single-patienst-info/' className="md:mt-1 text-white border py-1 px-4">Messages</Link>
+                    <Link to='/dr-releted-message/' className="md:mt-1 text-white border py-1 px-4">Messages</Link>
                 </div>
             ) : (
                 <div>
