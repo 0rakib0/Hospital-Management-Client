@@ -47,8 +47,8 @@ const AllMessage = () => {
 
     return (
         <div>
-            <PageTitle title='Message List' mainPage='Message' page='Message List'></PageTitle>
-            <div className="overflow-x-auto bg-white my-4 shadow-lg">
+            <PageTitle mainPage='Message' page='Message List'></PageTitle>
+            <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">
                     {/* head */}
                     <thead>

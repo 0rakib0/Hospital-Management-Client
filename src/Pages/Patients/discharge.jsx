@@ -3,7 +3,7 @@ import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import DataTable from "./DataTable"
 
-const Discharge = () =>{
+const Discharge = () => {
 
     const secureAxious = useAxious()
 
@@ -18,7 +18,9 @@ const Discharge = () =>{
     return (
         <div>
             <PageTitle title={'Discharge Patients'} mainPage='Patients' page={'Discharge Patients'}></PageTitle>
-            <DataTable patients={patients} refetch={refetch}></DataTable>
+            <div className="mx-6">
+                <DataTable patients={patients} refetch={refetch}></DataTable>
+            </div>
         </div>
     )
 }

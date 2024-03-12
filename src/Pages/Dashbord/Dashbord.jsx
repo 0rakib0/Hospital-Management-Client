@@ -39,7 +39,7 @@ const Dashbord = () => {
                         <FaWheelchair className="text-4xl text-white"></FaWheelchair>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>All Patients</Link></p>
+                        <p><Link to='/all-patients/'>All Patients</Link></p>
                         <p>0</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ const Dashbord = () => {
                         <TbWheelchair className="text-4xl text-white"></TbWheelchair>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Add Patients</Link></p>
+                        <p><Link to='/add-patients/'>Add Patients</Link></p>
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@ const Dashbord = () => {
                         <MdOutlineAirlineSeatReclineExtra  className="text-4xl text-white"></MdOutlineAirlineSeatReclineExtra >
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>In Treathment Patients</Link></p>
+                        <p><Link to='/tretments-patients/'>In Treathment Patients</Link></p>
                         <p>0</p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ const Dashbord = () => {
                         <MdOutlineWheelchairPickup className="text-4xl text-white"></MdOutlineWheelchairPickup>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Dishcharg Patients</Link></p>
+                        <p><Link to='/discharge-patients/'>Dishcharg Patients</Link></p>
                         <p>0</p>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ const Dashbord = () => {
                         <FaUserDoctor className="text-4xl text-white"></FaUserDoctor>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>All Doctors</Link></p>
+                        <p><Link to='/all-doctors/'>All Doctors</Link></p>
                         <p>0</p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ const Dashbord = () => {
                         <IoBagAddSharp className="text-4xl text-white"></IoBagAddSharp>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Add Doctors</Link></p>
+                        <p><Link to='/add-dostors/'>Add Doctors</Link></p>
                     </div>
                 </div> 
 
@@ -94,7 +94,7 @@ const Dashbord = () => {
                         <IoDocumentText className="text-4xl text-white"></IoDocumentText>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>All Appoinment</Link></p>
+                        <p><Link to='/appoinment-list/'>All Appoinment</Link></p>
                         <p>0</p>
                     </div>
                 </div> 
@@ -104,7 +104,7 @@ const Dashbord = () => {
                         <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Add Appoinment</Link></p>
+                        <p><Link to='/add-appoinment/'>Add Appoinment</Link></p>
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@ const Dashbord = () => {
                         <HiOutlineClipboardDocumentList className="text-4xl text-white"></HiOutlineClipboardDocumentList>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>All Notice</Link></p>
+                        <p><Link to='/all-notice/'>All Notice</Link></p>
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@ const Dashbord = () => {
                         <HiOutlineDocumentPlus className="text-4xl text-white"></HiOutlineDocumentPlus>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Add Notice</Link></p>
+                        <p><Link to='/add-notice/'>Add Notice</Link></p>
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -131,7 +131,7 @@ const Dashbord = () => {
                         <MdMessage className="text-4xl text-white"></MdMessage>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>All Message</Link></p>
+                        <p><Link to='/all-message/'>All Message</Link></p>
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -139,7 +139,7 @@ const Dashbord = () => {
                         <LuMessageSquarePlus className="text-4xl text-white"></LuMessageSquarePlus>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Send Message</Link></p>
+                        <p><Link to='/send-message/'>Send Message</Link></p>
                     </div>
                 </div>
 
@@ -148,7 +148,7 @@ const Dashbord = () => {
                         <RiWechatPayLine className="text-4xl text-white"></RiWechatPayLine>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>All Message</Link></p>
+                        <p><Link to='/payment-list/'>Payment Report</Link></p>
                     </div>
                 </div> 
 
@@ -157,7 +157,7 @@ const Dashbord = () => {
                         <MdOutlinePayment className="text-4xl text-white"></MdOutlinePayment>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link>Add Payment</Link></p>
+                        <p><Link to='/add-payment/'>Add Payment</Link></p>
                     </div>
                 </div>
             </div>

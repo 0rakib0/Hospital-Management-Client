@@ -78,8 +78,8 @@ const AddAppoinment = () => {
 
     return (
         <div>
-            <PageTitle title='Add Appoinment' mainPage='Appoinment' page='Add Appoinment'></PageTitle>
-            <div className="bg-white my-4 p-4 rounded-md shadow-lg">
+            <PageTitle mainPage='Appoinment' page='Add Appoinment'></PageTitle>
+            <div className="bg-white my-4 p-4 rounded-md shadow-lg mx-6">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
                 <hr />
                 <form className="mt-4" onSubmit={handleubmit}>

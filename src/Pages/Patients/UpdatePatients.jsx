@@ -70,7 +70,7 @@ const Update_patients = () =>{
 
     return (
         <div>
-            <PageTitle title='Update Patient' mainPage='Patients' page='Update Patient'></PageTitle>
+            <PageTitle mainPage='Patients' page='Update Patient'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Update Patients</h4>
                 <hr />

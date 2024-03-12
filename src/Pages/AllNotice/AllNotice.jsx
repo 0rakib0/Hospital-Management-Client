@@ -48,8 +48,8 @@ const AllNotice = () =>{
 
     return (
         <div>
-            <PageTitle title='Payment List' mainPage='Payment' page='Payment List'></PageTitle>
-            <div className="overflow-x-auto bg-white my-4 shadow-lg">
+            <PageTitle mainPage='Payment' page='Payment List'></PageTitle>
+            <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">
                     {/* head */}
                     <thead>

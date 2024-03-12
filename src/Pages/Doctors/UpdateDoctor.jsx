@@ -72,7 +72,7 @@ const UpdateDoctor = () =>{
 
     return (
         <div>
-            <PageTitle title='Update Doctors' mainPage='Doctors' page='Update Doctors'></PageTitle>
+            <PageTitle mainPage='Doctors' page='Update Doctors'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Add Doctors</h4>
                 <hr />

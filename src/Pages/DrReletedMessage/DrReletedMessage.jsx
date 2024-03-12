@@ -49,7 +49,7 @@ const DrReletedMessage = () =>{
 
     return (
         <div>
-            <PageTitle title='Message List' mainPage='Message' page='Message List'></PageTitle>
+            <PageTitle mainPage='Message' page='Message List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg">
                 <table className="table">
                     {/* head */}

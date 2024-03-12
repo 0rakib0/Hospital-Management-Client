@@ -19,7 +19,7 @@ const AppoinmentDetails = () => {
 
     return (
         <div>
-            <PageTitle title='Appoinment Details' mainPage='Appoinments' page='Appoinment Details'></PageTitle>
+            <PageTitle mainPage='Appoinments' page='Appoinment Details'></PageTitle>
             <div className="my-4 p-4 rounded-md shadow-lg">
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="lg:w-6/12 bg-white">

@@ -12,7 +12,7 @@ const Nav = () => {
     </>
 
     return (
-        <div className="bg-white flex items-center lg:flex-row flex-col lg:gap-24 px-6 lg:py-2">
+        <div className="bg-white flex items-center lg:flex-row flex-col lg:gap-24 px-6 lg:py-2 shadow-lg">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">

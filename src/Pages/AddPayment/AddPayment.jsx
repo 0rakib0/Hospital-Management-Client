@@ -79,8 +79,8 @@ const AddPayment = () => {
 
     return (
         <div>
-            <PageTitle title='Add Payment' mainPage='Payment' page='Add Payment'></PageTitle>
-            <div className="bg-white my-4 p-4 rounded-md shadow-lg">
+            <PageTitle mainPage='Payment' page='Add Payment'></PageTitle>
+            <div className="bg-white my-4 p-4 rounded-md shadow-lg mx-6">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
                 <hr />
                 <form onSubmit={handleSubmit} className="mt-4">

@@ -43,8 +43,8 @@ const AddNotice = () => {
     }
     return (
         <div>
-            <PageTitle title='Add New Notice' mainPage='Notice' page='Add New Notice'></PageTitle>
-            <form onSubmit={handleSubmit} className="mt-4">
+            <PageTitle mainPage='Notice' page='Add New Notice'></PageTitle>
+            <form onSubmit={handleSubmit} className="mt-4 mx-6">
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text font-bold">Add New Notice</span>

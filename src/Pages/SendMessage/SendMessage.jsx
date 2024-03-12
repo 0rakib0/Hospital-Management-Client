@@ -58,8 +58,8 @@ const SendMessage = () => {
     return (
         <div>
             <div>
-                <PageTitle title='Send Message' mainPage='Message' page='Send Message'></PageTitle>
-                <form className="mt-4" onSubmit={handlesubmit}>
+                <PageTitle mainPage='Message' page='Send Message'></PageTitle>
+                <form className="mt-4 mx-6" onSubmit={handlesubmit}>
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text font-bold">Doctor Name </span>
@@ -75,7 +75,7 @@ const SendMessage = () => {
                         <div className="label">
                             <span className="label-text font-bold">Message</span>
                         </div>
-                        <textarea name="message" id="" cols="30" rows="10" className="focus:border-secondaryColor border border-primaryColor focus:outline-0 p-2 rounded-md" placeholder="Write Notice Here"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10" className="focus:border-secondaryColor border border-primaryColor focus:outline-0 p-2 rounded-md" placeholder="Write Message Here"></textarea>
                     </label>
                     <input type="submit" value='Add Notification' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
                 </form>

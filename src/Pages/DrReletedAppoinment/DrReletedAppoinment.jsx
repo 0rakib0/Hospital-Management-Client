@@ -21,7 +21,7 @@ const DrReletedAppoinment = () =>{
 
     return (
         <div>
-            <PageTitle title='Payment List' mainPage='Payment' page='Payment List'></PageTitle>
+            <PageTitle mainPage='Payment' page='Payment List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg">
                 <table className="table">
                     {/* head */}

@@ -61,8 +61,8 @@ const Addpatients = () => {
 
     return (
         <div>
-            <PageTitle title='Add New Patients' mainPage='Patients' page='All Patients'></PageTitle>
-            <div className="bg-white my-4 p-4 rounded-md shadow-lg">
+            <PageTitle mainPage='Patients' page='All Patients'></PageTitle>
+            <div className="bg-white my-4 p-4 rounded-md shadow-lg mx-6">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
                 <hr />
                 <form onSubmit={handleSubmit} encType="multipart/form-data" className="mt-4">

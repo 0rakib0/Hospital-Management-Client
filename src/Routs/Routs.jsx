@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/add-patients/',
-          element: <PrivatRouts><Addpatients></Addpatients></PrivatRouts>
+          element: <Addpatients></Addpatients>
         },
         {
           path:'/all-patients/',
