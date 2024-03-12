@@ -1,14 +1,18 @@
 import { Link, NavLink } from "react-router-dom"
+import useAuth from "../../Hook/useAuth"
 
 const Nav = () => {
 
+    const {user} = useAuth()
+
     const navItem = <>
-        <li className="text-md ml-2"><Link to='#home'>HOME</Link></li>
+        <li className="text-md ml-2"><Link to='/'>HOME</Link></li>
         <li className="text-md ml-2"><Link to='#service'>SERVICE</Link></li>
         <li className="text-md ml-2"><Link>CONTACT</Link></li>
         <li className="text-md ml-2"><Link>ABOUT</Link></li>
-        <li className="text-md ml-2"><Link>DASHBORD</Link></li>
         <li className="text-md ml-2"><Link>BLOG</Link></li>
+        {user? <><li className="text-md ml-2"><Link to='/dashbord/'>DASHBORD</Link></li>
+        <li className="text-md ml-2"><Link>LOGOUT</Link></li></>:<li className="text-md ml-2"><Link to='/login/'>LOGIN</Link></li>}        
     </>
 
     return (

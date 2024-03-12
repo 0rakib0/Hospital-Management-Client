@@ -29,6 +29,7 @@ import SignelPatientsInfo from "../Pages/Dashbord/PatientsDashbord";
 import DrReletedAppoinment from "../Pages/DrReletedAppoinment/DrReletedAppoinment";
 import DrReletedMessage from "../Pages/DrReletedMessage/DrReletedMessage";
 import SideBar from "../Shared/NavBar/Sidebar";
+import Home from "../Pages/Home/Home";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       element: <Root></Root>,
       children: [
         {
-            path:'',
+          path:'',
+          element:<Home></Home>
+        },
+        {
+            path:'/dashbord/',
             element: <Dashbord></Dashbord>
         },
         {
