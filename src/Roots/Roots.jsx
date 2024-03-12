@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom"
-import NavBar from "../Shared/NavBar/Navbar"
 import Footer from "../Shared/Footer/Footer"
+import Nav from "../Shared/NavBar/Nav"
 
 const Root = () =>{
     return (
-        <div className="md:w-11/12 mx-auto">
-            <NavBar></NavBar>
+        <div className="">
+            <Nav></Nav>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
