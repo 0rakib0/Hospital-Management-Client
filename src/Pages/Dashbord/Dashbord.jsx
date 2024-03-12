@@ -4,7 +4,15 @@ import useAuth from "../../Hook/useAuth"
 import { FaWheelchair } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TbWheelchair } from "react-icons/tb";
-import { MdOutlineWheelchairPickup } from "react-icons/md";
+import { MdOutlineWheelchairPickup, MdOutlinePayment} from "react-icons/md";
+import { FaUserDoctor } from "react-icons/fa6";
+import { MdOutlineAirlineSeatReclineExtra, MdMessage } from "react-icons/md";
+import { IoBagAddSharp } from "react-icons/io5";
+import { IoDocumentText } from "react-icons/io5";
+import { TiDocumentAdd } from "react-icons/ti";
+import { HiOutlineClipboardDocumentList, HiOutlineDocumentPlus } from "react-icons/hi2";
+import { LuMessageSquarePlus } from "react-icons/lu";
+import { RiWechatPayLine } from "react-icons/ri";
 const Dashbord = () => {
 
     const asiouxSecure = useAxious()
@@ -47,7 +55,7 @@ const Dashbord = () => {
 
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
-                        <FaWheelchair className="text-4xl text-white"></FaWheelchair>
+                        <MdOutlineAirlineSeatReclineExtra  className="text-4xl text-white"></MdOutlineAirlineSeatReclineExtra >
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link>In Treathment Patients</Link></p>
@@ -62,12 +70,100 @@ const Dashbord = () => {
                         <p><Link>Dishcharg Patients</Link></p>
                         <p>0</p>
                     </div>
+                </div>
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                        <FaUserDoctor className="text-4xl text-white"></FaUserDoctor>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>All Doctors</Link></p>
+                        <p>0</p>
+                    </div>
+                </div>
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
+                        <IoBagAddSharp className="text-4xl text-white"></IoBagAddSharp>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>Add Doctors</Link></p>
+                    </div>
                 </div> 
 
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                        <IoDocumentText className="text-4xl text-white"></IoDocumentText>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>All Appoinment</Link></p>
+                        <p>0</p>
+                    </div>
+                </div> 
 
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>Add Appoinment</Link></p>
+                    </div>
+                </div>
+
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                        <HiOutlineClipboardDocumentList className="text-4xl text-white"></HiOutlineClipboardDocumentList>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>All Notice</Link></p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
+                        <HiOutlineDocumentPlus className="text-4xl text-white"></HiOutlineDocumentPlus>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>Add Notice</Link></p>
+                    </div>
+                </div>
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                        <MdMessage className="text-4xl text-white"></MdMessage>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>All Message</Link></p>
+                    </div>
+                </div>
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                        <LuMessageSquarePlus className="text-4xl text-white"></LuMessageSquarePlus>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>Send Message</Link></p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                        <RiWechatPayLine className="text-4xl text-white"></RiWechatPayLine>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>All Message</Link></p>
+                    </div>
+                </div> 
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                        <MdOutlinePayment className="text-4xl text-white"></MdOutlinePayment>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link>Add Payment</Link></p>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
+
 
 export default Dashbord
