@@ -28,6 +28,7 @@ import PrivatRouts from "./PrivatRouts";
 import SignelPatientsInfo from "../Pages/Dashbord/PatientsDashbord";
 import DrReletedAppoinment from "../Pages/DrReletedAppoinment/DrReletedAppoinment";
 import DrReletedMessage from "../Pages/DrReletedMessage/DrReletedMessage";
+import SideBar from "../Shared/NavBar/Sidebar";
 
 const router = createBrowserRouter([
     {
@@ -132,6 +133,10 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:'/sidebar/',
+      element: <SideBar></SideBar>
+    }
   ]);
 
 
