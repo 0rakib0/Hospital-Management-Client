@@ -2,7 +2,7 @@ import Banner from "./Banner"
 
 const Home = () =>{
     return (
-        <div className="mx-6 bg-red-400">
+        <div className="mx-6">
             <Banner></Banner>
         </div>
     )
