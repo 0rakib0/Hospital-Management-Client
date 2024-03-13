@@ -4,13 +4,15 @@ import { HiClipboardDocumentList } from "react-icons/hi2";
 import { FaBedPulse, FaUserDoctor } from "react-icons/fa6";
 import { FaAmbulance } from "react-icons/fa";
 import { BiSolidDonateBlood } from "react-icons/bi";
+import { TbMedicineSyrup } from "react-icons/tb";
+import { GrDocumentConfig } from "react-icons/gr";
 
 const Service = () => {
     return (
         <div className="md:mt-20 mt-10">
             <SectionTitle title1='OUR' title2='SERVICES'></SectionTitle>
             <div className="grid grid-cols-4 gap-4">
-                <div className="bg-white p-4 text-center flex flex-col items-center hover:border-2 hover:border-primaryColor duration-300 hover:rounded-lg">
+                <div className="bg-white p-4 text-center flex flex-col items-center hover:border hover:border-primaryColor duration-300 hover:rounded-lg">
                     <div className="text-6xl text-primaryColor mb-2">
                         <GiLoveMystery></GiLoveMystery>
                     </div>
@@ -53,17 +55,17 @@ const Service = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eius facilis libero quibusdam enim a, nisi repellendus ut cumque nihil, atque, sequi natus amet provident?</p>
                 </div>
                 <div className="bg-white p-4 text-center flex flex-col items-center">
-                    <div className="text-4xl text-primaryColor">
-                        <GiLoveMystery></GiLoveMystery>
+                    <div className="text-6xl text-primaryColor mb-2">
+                        <TbMedicineSyrup></TbMedicineSyrup>
                     </div>
-                    <h4 className="text-2xl font-semibold">Emergency Care</h4>
+                    <h4 className="text-2xl font-semibold">Medicine & Phermacy</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eius facilis libero quibusdam enim a, nisi repellendus ut cumque nihil, atque, sequi natus amet provident?</p>
                 </div>
                 <div className="bg-white p-4 text-center flex flex-col items-center">
-                    <div className="text-4xl text-primaryColor">
-                        <GiLoveMystery></GiLoveMystery>
+                    <div className="text-6xl text-primaryColor mb-2">
+                        <GrDocumentConfig></GrDocumentConfig>
                     </div>
-                    <h4 className="text-2xl font-semibold">Emergency Care</h4>
+                    <h4 className="text-2xl font-semibold">Quality Enssure</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eius facilis libero quibusdam enim a, nisi repellendus ut cumque nihil, atque, sequi natus amet provident?</p>
                 </div>
             </div>
