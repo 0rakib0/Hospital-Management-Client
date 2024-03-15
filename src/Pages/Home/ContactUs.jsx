@@ -12,10 +12,23 @@ const ContactUs = () => {
                     <form action="">
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text">What is your name?</span>
+                                <span className="label-text">Full Name</span>
                             </div>
                             <input type="text" placeholder="Type here" className="input input-bordered w-full" />
                         </label>
+                        <label className="form-control w-full">
+                            <div className="label">
+                                <span className="label-text">Email</span>
+                            </div>
+                            <input type="text" placeholder="Type here" className="input input-bordered w-full" />
+                        </label>
+                        <label className="form-control w-full">
+                            <div className="label">
+                                <span className="label-text">Message</span>
+                            </div>
+                            <textarea name="" id="" cols="15" rows="10" className="w-full"></textarea>
+                        </label>
+
                     </form>
                 </div>
             </div>
