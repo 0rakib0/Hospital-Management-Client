@@ -35,3 +35,14 @@ button:hover::after{
     border: 2px solid #51b5b5;
     padding: 2rem;
 }
+
+
+.hover_animation:hover .poup{
+    opacity: 10;
+
+}
+
+.poup{
+    opacity: 0;
+    transition-duration: .5s;
+}

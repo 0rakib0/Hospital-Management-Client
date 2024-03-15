@@ -3,6 +3,7 @@ import Banner from "./Banner"
 import ComplatedService from "./ComplatedService"
 import Department from "./Department"
 import Service from "./Services"
+import Team from "./Team"
 
 const Home = () =>{
     return (
@@ -12,6 +13,7 @@ const Home = () =>{
             <AboutUs></AboutUs>
             <Service></Service>
             <Department></Department>
+            <Team></Team>
         </div>
     )
 }
