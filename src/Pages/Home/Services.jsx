@@ -11,7 +11,7 @@ const Service = () => {
     return (
         <div className="md:mt-20 mt-10">
             <SectionTitle title1='OUR' title2='SERVICES'></SectionTitle>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4  gap-4">
                 <div className="bg-white p-4 text-center flex flex-col items-center hover:border hover:border-primaryColor duration-300 hover:rounded-lg">
                     <div className="text-6xl text-primaryColor mb-2">
                         <GiLoveMystery></GiLoveMystery>

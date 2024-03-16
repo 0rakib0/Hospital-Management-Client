@@ -5,7 +5,7 @@ const Team = () => {
     return (
         <div className="md:mt-20 mt-10">
             <SectionTitle title1='OUR' title2='TEAM'></SectionTitle>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="bg-white pb-4 rounded-lg border border-primaryColor duration-300 hover_animation relative">
                     <div className="w-52 h-48 overflow-hidden mx-auto py-4 border-b-2 border-primaryColor">
                         <img src="https://www.felixhospital.com/sites/default/files/2022-11/dr-dk-gupta.jpg" className="border-2 border-primaryColor" alt="Picture Not Found" />
