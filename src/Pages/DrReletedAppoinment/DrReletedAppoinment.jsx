@@ -21,8 +21,8 @@ const DrReletedAppoinment = () =>{
 
     return (
         <div>
-            <PageTitle mainPage='Payment' page='Payment List'></PageTitle>
-            <div className="overflow-x-auto bg-white my-4 shadow-lg">
+            <PageTitle mainPage='appoinment' page='Appoinment List'></PageTitle>
+            <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -71,18 +71,9 @@ const DrReletedAppoinment = () =>{
                                         <td className="border bg-blue-400 text-white">{appoinment?.approveStatus}</td>
                                     )}
 
-                                    <th className="border flex items-center justify-center gap-2 text-xl">
-                                        <div className="bg-blue-400 p-1 text-white rounded-md">
-                                            <Link to={`/appoinment-details/${appoinment.id}`}><FaEye></FaEye></Link>
-                                        </div>
-
-                                        <div className="bg-green-400 p-1 text-white rounded-md">
-                                            <Link><FaPencilAlt></FaPencilAlt></Link>
-                                        </div>
-
-                                        <div className="bg-red-400 p-1 text-white rounded-md">
-                                            <Link><FaTrash></FaTrash></Link>
-                                        </div>
+                                    <th className="border flex items-center justify-center gap-2">
+                                            <button className="bg-green-400 p-1 text-white rounded-md">APPROVE</button>
+                                            <button className="bg-red-400 p-1 text-white rounded-md">REJECT</button>
                                     </th>
                                 </tr>
                             ))

@@ -221,7 +221,7 @@ const Dashbord = () => {
                         <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/add-appoinment/'>MyAppoinment</Link></p>
+                        <p><Link to='/dr-eleted-appoinment/'>MyAppoinment</Link></p>
                     </div>
                 </div>
 
@@ -239,7 +239,7 @@ const Dashbord = () => {
                         <MdMessage className="text-4xl text-white"></MdMessage>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/all-message/'>Messages</Link></p>
+                        <p><Link to='/dr-releted-message'>Messages</Link></p>
                     </div>
                 </div>
 

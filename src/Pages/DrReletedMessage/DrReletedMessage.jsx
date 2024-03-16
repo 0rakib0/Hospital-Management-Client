@@ -50,7 +50,7 @@ const DrReletedMessage = () =>{
     return (
         <div>
             <PageTitle mainPage='Message' page='Message List'></PageTitle>
-            <div className="overflow-x-auto bg-white my-4 shadow-lg">
+            <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">
                     {/* head */}
                     <thead>
