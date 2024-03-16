@@ -5,10 +5,10 @@ const ContactUs = () => {
         <div className="md:mt-20 mt-10">
             <SectionTitle title1='CONTACT' title2='US'></SectionTitle>
             <div className="flex flex-col lg:flex-row p-2">
-                <div className="lg:w-6/12 mt-4">
+                <div className="lg:w-6/12 mt-4 mx-auto">
                     <img src="https://qph.cf2.quoracdn.net/main-qimg-8f8aa3e13f5af63fc93cd147692bc2d4-pjlq" alt="pic not found" />
                 </div>
-                <div className="lg:w-6/12">
+                <div className="lg:w-6/12 mt-6 lg_mt-0">
                     <form action="">
                         <label className="form-control w-full">
                             <div className="label">
