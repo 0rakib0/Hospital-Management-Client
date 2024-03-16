@@ -26,9 +26,9 @@ const ContactUs = () => {
                             <div className="label">
                                 <span className="label-text">Message</span>
                             </div>
-                            <textarea name="" id="" cols="15" rows="10" className="w-full"></textarea>
+                            <textarea name="" id="" cols="15" rows="6" className="w-full"></textarea>
                         </label>
-
+                        <button className="button py-2 px-4 hover:gap-4 mt-4">Send Message</button>
                     </form>
                 </div>
             </div>
