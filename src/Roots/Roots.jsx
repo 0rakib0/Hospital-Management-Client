@@ -7,7 +7,7 @@ const Root = () =>{
         <div className="">
             <Nav></Nav>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     )
 }
