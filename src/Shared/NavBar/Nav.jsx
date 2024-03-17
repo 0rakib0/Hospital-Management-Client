@@ -1,9 +1,15 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import useAuth from "../../Hook/useAuth"
 
 const Nav = () => {
 
-    const {user} = useAuth()
+    const {user, Logout} = useAuth()
+    const naviget = useNavigate()
+
+    const handleLogout = () =>{
+        Logout()
+        naviget('/')
+    }
 
     const navItem = <>
         <li className="text-md ml-2"><Link to='/'>HOME</Link></li>
@@ -12,7 +18,7 @@ const Nav = () => {
         <li className="text-md ml-2"><Link>ABOUT</Link></li>
         <li className="text-md ml-2"><Link>BLOG</Link></li>
         {user? <><li className="text-md ml-2"><Link to='/dashbord/'>DASHBORD</Link></li>
-        <li className="text-md ml-2"><Link>LOGOUT</Link></li></>:<li className="text-md ml-2"><Link to='/login/'>LOGIN</Link></li>}        
+        <li className="text-md ml-2" onClick={handleLogout}><Link>LOGOUT</Link></li></>:<li className="text-md ml-2"><Link to='/login/'>LOGIN</Link></li>}        
     </>
 
     return (

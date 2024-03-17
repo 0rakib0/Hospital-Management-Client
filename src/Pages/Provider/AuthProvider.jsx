@@ -40,6 +40,14 @@ const AuthProvider = ({children}) =>{
     }
 
 
+    const Logout = () =>{
+        setAuthToken(null)
+        setUser(null)
+        localStorage.removeItem('authToken')
+        setLoading(false)
+    }
+
+
     useEffect(() =>{
         if (userId){
             secureAxious.get(`/user-info/${userId}`)
@@ -54,7 +62,8 @@ const AuthProvider = ({children}) =>{
         user,
         userInfo,
         loading,
-        Login
+        Login,
+        Logout
     }
 
     return (

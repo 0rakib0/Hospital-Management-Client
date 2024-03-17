@@ -19,7 +19,7 @@ const LoginPage = () => {
 
     useEffect(() =>{
         if (user){
-            navigat('/')
+            navigat('/dashbord/')
         }
     }, [user])
    
