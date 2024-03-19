@@ -35,7 +35,10 @@ const PatientsDetails = () => {
         }
     })
 
-    console.log(payments)
+    const handleDischargPatients = id =>{
+        console.log('--------------------')
+        console.log(id)
+    }
 
     return (
         <div>
@@ -130,7 +133,7 @@ const PatientsDetails = () => {
                                             {patient?.disCharged ? <p>Dischared</p> :
                                                 <div className="flex gap-2 items-center">
                                                     <p>In Treatment</p>
-                                                    <button className="bg-primaryColor p-1 rounded-lg text-white hover:bg-secondaryColor duration-300">Discharge</button>
+                                                    <button onClick={() =>handleDischargPatients(patient?.id)} className="bg-primaryColor p-1 rounded-lg text-white hover:bg-secondaryColor duration-300">Discharge</button>
                                                 </div>
                                             }
                                         </td>
