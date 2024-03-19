@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
 import { Link, useParams } from "react-router-dom"
-import { FaEye} from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 const PatientsDetails = () => {
 
@@ -27,9 +27,9 @@ const PatientsDetails = () => {
         }
     })
 
-    const {data:PatientAppoinment} = useQuery({
+    const { data: PatientAppoinment } = useQuery({
         queryKey: ['PatientAppoinment', patientsId],
-        queryFn: async () =>{
+        queryFn: async () => {
             const res = await secureAxious.get(`/patients-appoinment/${patientsId}`)
             return res.data
         }
@@ -128,7 +128,10 @@ const PatientsDetails = () => {
                                         </td>
                                         <td className="border">
                                             {patient?.disCharged ? <p>Dischared</p> :
-                                                <p>In Treatment</p>
+                                                <div className="flex gap-2 items-center">
+                                                    <p>In Treatment</p>
+                                                    <button className="bg-primaryColor p-1 rounded-lg text-white hover:bg-secondaryColor duration-300">Discharge</button>
+                                                </div>
                                             }
                                         </td>
                                     </tr>
@@ -152,36 +155,36 @@ const PatientsDetails = () => {
                             <tbody>
                                 {
                                     PatientAppoinment?.map(pa => <tr key={pa.id} className="border">
-                                    <td className="border px-4 py-2">
-                                        {pa.doctor.doctorName}
-                                    </td>
-                                    <td className="border">
-                                        {/* Format the date here */}
-                                        {
-                                            pa?.appoinmentDate &&
-                                            (() => {
-                                                const date = new Date(pa.appoinmentDate);
-                                                const formattedDate = date.toLocaleDateString("en-US", {
-                                                    day: "2-digit",
-                                                    month: "short",
-                                                    year: "numeric"
-                                                });
-                                                return formattedDate;
-                                            })()
-                                        }
-                                    </td>
-                                    <td className="border px-4 py-2">{pa.timeSlot}</td>
-                                    {pa?.approveStatus === 'Approved' ? (
-                                        <td className="border bg-green-400 text-white">{pa?.approveStatus}</td>
-                                    ): pa?.approveStatus === 'Rejected'? (
-                                        <td className="border bg-red-400 text-white">{pa?.approveStatus} </td>
+                                        <td className="border px-4 py-2">
+                                            {pa.doctor.doctorName}
+                                        </td>
+                                        <td className="border">
+                                            {/* Format the date here */}
+                                            {
+                                                pa?.appoinmentDate &&
+                                                (() => {
+                                                    const date = new Date(pa.appoinmentDate);
+                                                    const formattedDate = date.toLocaleDateString("en-US", {
+                                                        day: "2-digit",
+                                                        month: "short",
+                                                        year: "numeric"
+                                                    });
+                                                    return formattedDate;
+                                                })()
+                                            }
+                                        </td>
+                                        <td className="border px-4 py-2">{pa.timeSlot}</td>
+                                        {pa?.approveStatus === 'Approved' ? (
+                                            <td className="border bg-green-400 text-white">{pa?.approveStatus}</td>
+                                        ) : pa?.approveStatus === 'Rejected' ? (
+                                            <td className="border bg-red-400 text-white">{pa?.approveStatus} </td>
                                         ) : (
-                                        <td className="border bg-blue-400 text-white">{pa?.approveStatus}</td>
-                                    )}
-                                    <td><Link to={`/appoinment-details/${pa.id}`}><FaEye className="text-xl text-blue-400"></FaEye></Link></td>
-                                </tr>)
+                                            <td className="border bg-blue-400 text-white">{pa?.approveStatus}</td>
+                                        )}
+                                        <td><Link to={`/appoinment-details/${pa.id}`}><FaEye className="text-xl text-blue-400"></FaEye></Link></td>
+                                    </tr>)
                                 }
-                                
+
                             </tbody>
                         </table>
 
