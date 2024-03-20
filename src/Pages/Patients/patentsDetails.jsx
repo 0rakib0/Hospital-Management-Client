@@ -11,7 +11,7 @@ const PatientsDetails = () => {
 
     const secureAxious = useAxious()
 
-    const { data: patient } = useQuery({
+    const { data: patient, refetch } = useQuery({
         queryKey: ['patients', patientsId],
         queryFn: async () => {
             const res = await secureAxious.get(`/patients/patients/${patientsId}`)
@@ -38,6 +38,11 @@ const PatientsDetails = () => {
     const handleDischargPatients = id =>{
         console.log('--------------------')
         console.log(id)
+        secureAxious.get(`/patients/update-patients-status/${id}`)
+        .then(res =>{
+            console.log(res.data)
+            refetch()
+        })
     }
 
     return (
@@ -130,9 +135,9 @@ const PatientsDetails = () => {
                                             Patients Status
                                         </td>
                                         <td className="border">
-                                            {patient?.disCharged ? <p>Dischared</p> :
+                                            {patient?.disCharged ? <button className="bg-green-500 p-1 text-white rounded-md" disabled>Dischared</button> :
                                                 <div className="flex gap-2 items-center">
-                                                    <p>In Treatment</p>
+                                                    <button className="bg-blue-500 p-1 text-white rounded-md" disabled>In Treatment</button>
                                                     <button onClick={() =>handleDischargPatients(patient?.id)} className="bg-primaryColor p-1 rounded-lg text-white hover:bg-secondaryColor duration-300">Discharge</button>
                                                 </div>
                                             }
