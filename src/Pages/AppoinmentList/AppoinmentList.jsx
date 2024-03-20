@@ -60,12 +60,12 @@ const AppoinmentList = () => {
                                     </td>
                                     <td className="border">{appoinment?.timeSlot}</td>
                                     <td className="border">{appoinment?.department}</td>
-                                    {appoinment?.approveStatus === 'Approved' ? (
-                                        <td className="border bg-green-400 text-white">{appoinment?.approveStatus}</td>
-                                    ): appoinment?.approveStatus === 'Rejected'? (
-                                        <td className="border bg-red-400 text-white">{appoinment?.approveStatus} </td>
-                                        ) : (
-                                        <td className="border bg-blue-400 text-white">{appoinment?.approveStatus}</td>
+                                    {appoinment?.reject ? (
+                                        <td className="border bg-red-400 text-white">Reject</td>
+                                    ) : appoinment?.approveStatus ? (
+                                        <td className="border bg-green-400 text-white">Approve</td>
+                                    ) : (
+                                        <td className="border bg-blue-400 text-white">Pending</td>
                                     )}
 
                                     <th className="border flex items-center justify-center gap-2 text-xl">
