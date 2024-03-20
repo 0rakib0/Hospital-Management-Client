@@ -91,12 +91,12 @@ const AppoinmentDetails = () => {
                                         </td>
                                     </tr>
                                     <td>Appoinment Status</td>
-                                    {appoinments?.approveStatus === 'Approved' ? (
-                                        <td className="border bg-green-400 text-white text-center">{appoinments?.approveStatus}</td>
-                                    ) : appoinments?.approveStatus === 'Rejected' ? (
-                                        <td className="border bg-red-400 text-white text-center">{appoinments?.approveStatus} </td>
+                                    {appoinments?.reject ? (
+                                        <td className="border bg-red-400 text-white">Reject</td>
+                                    ) : appoinments?.approveStatus ? (
+                                        <td className="border bg-green-400 text-white">Approve</td>
                                     ) : (
-                                        <td className="border bg-blue-400 text-white text-center">{appoinments?.approveStatus}</td>
+                                        <td className="border bg-blue-400 text-white">Pending</td>
                                     )}
                                     <tr>
                                         <td className="border font-bold">

@@ -54,19 +54,19 @@ const Dashbord = () => {
 
 
 
-    useEffect(()=>{
+    useEffect(() => {
         asiouxSecure.get(`/payments/${patientsId}`)
-        .then(res =>{
-            setPayment(res.data)
-        })
-    },[patientsId])
+            .then(res => {
+                setPayment(res.data)
+            })
+    }, [patientsId])
 
 
-    useEffect(() =>{
+    useEffect(() => {
         asiouxSecure.get(`/patients-appoinment/${patientsId}`)
-        .then(res =>{
-            setAppoinment(res.data)
-        })
+            .then(res => {
+                setAppoinment(res.data)
+            })
     }, [patientsId])
 
     return (
@@ -378,12 +378,12 @@ const Dashbord = () => {
                                                 }
                                             </td>
                                             <td className="border px-4 py-2">{pa.timeSlot}</td>
-                                            {pa?.approveStatus === 'Approved' ? (
-                                                <td className="border bg-green-400 text-white">{pa?.approveStatus}</td>
-                                            ) : pa?.approveStatus === 'Rejected' ? (
-                                                <td className="border bg-red-400 text-white">{pa?.approveStatus} </td>
+                                            {pa.reject ? (
+                                                <td className="border bg-red-400 text-white">Reject</td>
+                                            ) : pa.approveStatus ? (
+                                                <td className="border bg-green-400 text-white">Approve</td>
                                             ) : (
-                                                <td className="border bg-blue-400 text-white">{pa?.approveStatus}</td>
+                                                <td className="border bg-blue-400 text-white">Pending</td>
                                             )}
                                             <td><Link to={`/appoinment-details/${pa.id}`}><FaEye className="text-xl text-blue-400"></FaEye></Link></td>
                                         </tr>)

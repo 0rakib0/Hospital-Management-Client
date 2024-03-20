@@ -26,8 +26,6 @@ const PatientsDetails = () => {
             return res.data
         }
     })
-    console.log('------------_+++++++++++++_+___')
-    console.log(payments)
 
     const { data: PatientAppoinment } = useQuery({
         queryKey: ['PatientAppoinment', patientsId],
@@ -37,14 +35,12 @@ const PatientsDetails = () => {
         }
     })
 
-    const handleDischargPatients = id =>{
-        console.log('--------------------')
-        console.log(id)
+    const handleDischargPatients = id => {
         secureAxious.get(`/patients/update-patients-status/${id}`)
-        .then(res =>{
-            console.log(res.data)
-            refetch()
-        })
+            .then(res => {
+                console.log(res.data)
+                refetch()
+            })
     }
 
     return (
@@ -140,7 +136,7 @@ const PatientsDetails = () => {
                                             {patient?.disCharged ? <button className="bg-green-500 p-1 text-white rounded-md" disabled>Dischared</button> :
                                                 <div className="flex gap-2 items-center">
                                                     <button className="bg-blue-500 p-1 text-white rounded-md" disabled>In Treatment</button>
-                                                    <button onClick={() =>handleDischargPatients(patient?.id)} className="bg-primaryColor p-1 rounded-lg text-white hover:bg-secondaryColor duration-300">Discharge</button>
+                                                    <button onClick={() => handleDischargPatients(patient?.id)} className="bg-primaryColor p-1 rounded-lg text-white hover:bg-secondaryColor duration-300">Discharge</button>
                                                 </div>
                                             }
                                         </td>
@@ -184,12 +180,12 @@ const PatientsDetails = () => {
                                             }
                                         </td>
                                         <td className="border px-4 py-2">{pa.timeSlot}</td>
-                                        {pa?.approveStatus === 'Approved' ? (
-                                            <td className="border bg-green-400 text-white">{pa?.approveStatus}</td>
-                                        ) : pa?.approveStatus === 'Rejected' ? (
-                                            <td className="border bg-red-400 text-white">{pa?.approveStatus} </td>
+                                        {pa.reject? (
+                                            <td className="border bg-red-400 text-white">Reject</td>
+                                        ) : pa.approveStatus? (
+                                            <td className="border bg-green-400 text-white">Approve</td>
                                         ) : (
-                                            <td className="border bg-blue-400 text-white">{pa?.approveStatus}</td>
+                                            <td className="border bg-blue-400 text-white">Pending</td>
                                         )}
                                         <td><Link to={`/appoinment-details/${pa.id}`}><FaEye className="text-xl text-blue-400"></FaEye></Link></td>
                                     </tr>)
