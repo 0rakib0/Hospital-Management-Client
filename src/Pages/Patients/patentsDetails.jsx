@@ -26,6 +26,8 @@ const PatientsDetails = () => {
             return res.data
         }
     })
+    console.log('------------_+++++++++++++_+___')
+    console.log(payments)
 
     const { data: PatientAppoinment } = useQuery({
         queryKey: ['PatientAppoinment', patientsId],
