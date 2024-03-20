@@ -4,20 +4,39 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { Link } from "react-router-dom";
 import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
 import useAuth from "../../Hook/useAuth";
+import Swal from 'sweetalert2';
 
-
-const DrReletedAppoinment = () =>{
+const DrReletedAppoinment = () => {
 
     const secureAxious = useAxious()
-    const {user} = useAuth()
+    const { user } = useAuth()
 
-    const { data: appoinments } = useQuery({
+    const { data: appoinments, refetch } = useQuery({
         queryKey: ['appoinment'],
         queryFn: async () => {
             const res = await secureAxious.get(`doctor-releted-appoinment/${user}`)
             return res.data
         }
     })
+
+
+    const handleApproveRejectAppoinment = (status, id) => {
+        console.log(status)
+        console.log(id)
+        secureAxious.get(`/update-appoinment-status/${id}/?status=${status}`)
+            .then(res => {
+                if (res.data.message) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `Appoinment Successfully ${status}`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+                refetch()
+            })
+    }
 
     return (
         <div>
@@ -63,18 +82,25 @@ const DrReletedAppoinment = () =>{
                                     </td>
                                     <td className="border">{appoinment?.timeSlot}</td>
                                     <td className="border">{appoinment?.department}</td>
-                                    {appoinment?.approveStatus === 'Approved' ? (
-                                        <td className="border bg-green-400 text-white">{appoinment?.approveStatus}</td>
-                                    ): appoinment?.approveStatus === 'Rejected'? (
-                                        <td className="border bg-red-400 text-white">{appoinment?.approveStatus} </td>
-                                        ) : (
-                                        <td className="border bg-blue-400 text-white">{appoinment?.approveStatus}</td>
+                                    {appoinment?.reject ? (
+                                        <td className="border bg-red-400 text-white">Reject</td>
+                                    ) : appoinment?.approveStatus ? (
+                                        <td className="border bg-green-400 text-white">Approve</td>
+                                    ) : (
+                                        <td className="border bg-blue-400 text-white">Pending</td>
                                     )}
 
-                                    <th className="border flex items-center justify-center gap-2">
-                                            <button className="bg-green-400 p-1 text-white rounded-md">APPROVE</button>
-                                            <button className="bg-red-400 p-1 text-white rounded-md">REJECT</button>
-                                    </th>
+
+                                    {appoinment?.reject ? (
+                                        <td className="border text-red-400">Rejected</td>
+                                    ) : appoinment?.approveStatus ? (
+                                        <td className="border text-green-400">Approved</td>
+                                    ) : (
+                                        <th className="border flex items-center justify-center gap-2">
+                                            <button onClick={() => handleApproveRejectAppoinment('approve', appoinment?.id)} className="bg-green-400 p-1 text-white rounded-md">APPROVE</button>
+                                            <button onClick={() => handleApproveRejectAppoinment('reject', appoinment?.id)} className="bg-red-400 p-1 text-white rounded-md">REJECT</button>
+                                        </th>
+                                    )}
                                 </tr>
                             ))
                         }
