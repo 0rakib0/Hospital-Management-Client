@@ -2,45 +2,53 @@ import { createContext, useEffect, useId, useState } from "react";
 import useAxious from "../../Hook/SecureAxious";
 import { Navigate, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-
+import Swal from 'sweetalert2';
 export const authContext = createContext()
 
-const AuthProvider = ({children}) =>{
+const AuthProvider = ({ children }) => {
     const secureAxious = useAxious()
     const [loading, setLoading] = useState(false)
     const isTokenAvailable = localStorage.getItem('authToken')
     const isUser = (JSON.parse(isTokenAvailable)?.access)
     const [userId, setuserId] = useState(null)
-    const [authToken, setAuthToken] = useState(isTokenAvailable ? JSON.parse(isTokenAvailable):null)
-    const [user, setUser] = useState(isTokenAvailable? (jwtDecode(isUser).email):null)
+    const [authToken, setAuthToken] = useState(isTokenAvailable ? JSON.parse(isTokenAvailable) : null)
+    const [user, setUser] = useState(isTokenAvailable ? (jwtDecode(isUser).email) : null)
     const [userInfo, setUserinfo] = useState(null)
-    
-    useEffect(() =>{
-        if (isTokenAvailable){
+
+    useEffect(() => {
+        if (isTokenAvailable) {
             setuserId((jwtDecode(isUser).user_id))
         }
-    },[isTokenAvailable])
+    }, [isTokenAvailable])
 
-    const Login = (email, password) =>{
-        secureAxious.post('auth/token/', {email, password})
-        .then(res =>{
-            if(res.status == 200){
-                const token = res.data
-                const userInfo = jwtDecode(res.data.access).email
-                setAuthToken(token)
-                setUser(userInfo)
-                if (loading){
-                    setLoading(false)
+    const Login = (email, password) => {
+        secureAxious.post('auth/token/', { email, password })
+            .then(res => {
+                console.log(res.data)
+                if (res.status == 200) {
+                    const token = res.data
+                    const userInfo = jwtDecode(res.data.access).email
+                    setAuthToken(token)
+                    setUser(userInfo)
+                    if (loading) {
+                        setLoading(false)
+                    }
+                    localStorage.setItem('authToken', JSON.stringify(token))
+                } else {
+                    alert('Something Wrong!')
                 }
-                localStorage.setItem('authToken', JSON.stringify(token))
-            }else{
-                alert('Something Wrong!')
-            }
-        })
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: "User Not Found!",
+                    text: "No User Fount With This Cradential",
+                    icon: "error"
+                });
+            })
     }
 
 
-    const Logout = () =>{
+    const Logout = () => {
         setAuthToken(null)
         setUser(null)
         localStorage.removeItem('authToken')
@@ -48,12 +56,12 @@ const AuthProvider = ({children}) =>{
     }
 
 
-    useEffect(() =>{
-        if (userId){
+    useEffect(() => {
+        if (userId) {
             secureAxious.get(`/user-info/${userId}`)
-        .then(res =>{
-            setUserinfo(res.data)
-        })
+                .then(res => {
+                    setUserinfo(res.data)
+                })
         }
     }, [userId])
 
