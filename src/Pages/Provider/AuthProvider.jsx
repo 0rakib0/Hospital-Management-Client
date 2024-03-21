@@ -58,6 +58,8 @@ const AuthProvider = ({children}) =>{
     }, [userId])
 
 
+    console.log('-----------------------------------')
+    console.log(user)
     const authInfo = {
         user,
         userInfo,

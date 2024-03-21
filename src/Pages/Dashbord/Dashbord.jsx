@@ -42,7 +42,7 @@ const Dashbord = () => {
     // ----------------------------------Patients Dashbod -------------------------
 
     useEffect(() => {
-        asiouxSecure.get(`patients/single-patient/rakib@gmail.com/`)
+        asiouxSecure.get(`patients/single-patient/${user}/`)
             .then(res => {
                 setPatients(res.data)
             })
