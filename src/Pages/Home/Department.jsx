@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle"
 
 const Department = () => {
     return (
-        <div className="md:mt-20 mt-10">
+        <div className="md:mt-20 mt-10" id="department">
             <SectionTitle title1='OUR' title2='DEPARTMENT'></SectionTitle>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="bg-white p-3 hover:border hover:border-primaryColor duration-300 hover:rounded-lg">

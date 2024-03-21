@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle"
 
 const ContactUs = () => {
     return (
-        <div className="md:mt-20 mt-10">
+        <div className="md:mt-20 mt-10" id="contact">
             <SectionTitle title1='CONTACT' title2='US'></SectionTitle>
             <div className="flex flex-col lg:flex-row p-2">
                 <div className="lg:w-6/12 mt-4 mx-auto">

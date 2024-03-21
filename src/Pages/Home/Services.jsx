@@ -9,7 +9,7 @@ import { GrDocumentConfig } from "react-icons/gr";
 
 const Service = () => {
     return (
-        <div className="md:mt-20 mt-10">
+        <div className="md:mt-20 mt-10" id="service">
             <SectionTitle title1='OUR' title2='SERVICES'></SectionTitle>
             <div className="grid md:grid-cols-2 lg:grid-cols-4  gap-4">
                 <div className="bg-white p-4 text-center flex flex-col items-center hover:border hover:border-primaryColor duration-300 hover:rounded-lg">

@@ -13,10 +13,11 @@ const Nav = () => {
 
     const navItem = <>
         <li className="text-md ml-2"><Link to='/'>HOME</Link></li>
-        <li className="text-md ml-2"><Link to='#service'>SERVICE</Link></li>
-        <li className="text-md ml-2"><Link>CONTACT</Link></li>
-        <li className="text-md ml-2"><Link>ABOUT</Link></li>
-        <li className="text-md ml-2"><Link>BLOG</Link></li>
+        <li className="text-md ml-2"><a href='#about'>ABOUT</a></li>
+        <li className="text-md ml-2"><a href='#service'>SERVICE</a></li>
+        <li className="text-md ml-2"><a href="#department">DEPARTMENT</a></li>
+        <li className="text-md ml-2"><a href="#team">TEAM</a></li>
+        <li className="text-md ml-2"><a href="#contact">CONTACT</a></li>
         {user? <><li className="text-md ml-2"><Link to='/dashbord/'>DASHBORD</Link></li>
         <li className="text-md ml-2" onClick={handleLogout}><Link>LOGOUT</Link></li></>:<li className="text-md ml-2"><Link to='/login/'>LOGIN</Link></li>}        
     </>
