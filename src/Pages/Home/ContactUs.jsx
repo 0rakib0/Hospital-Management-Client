@@ -1,14 +1,16 @@
+import useAOS from "../../Hook/useAOS"
 import SectionTitle from "./SectionTitle"
 
 const ContactUs = () => {
+    useAOS()
     return (
-        <div className="md:mt-20 mt-10" id="contact">
+        <div data-aos="fade-up" className="md:mt-20 mt-10" id="contact">
             <SectionTitle title1='CONTACT' title2='US'></SectionTitle>
-            <div className="flex flex-col lg:flex-row p-2">
-                <div className="lg:w-6/12 mt-4 mx-auto">
+            <div className="flex flex-col lg:flex-row  gap-4 p-2">
+                <div data-aos="fade-up-right" className="lg:w-6/12 mt-4 mx-auto">
                     <img src="https://qph.cf2.quoracdn.net/main-qimg-8f8aa3e13f5af63fc93cd147692bc2d4-pjlq" alt="pic not found" />
                 </div>
-                <div className="lg:w-6/12 mt-6 lg_mt-0">
+                <div data-aos="fade-up-left" className="lg:w-6/12 mt-2 lg_mt-0">
                     <form action="">
                         <label className="form-control w-full">
                             <div className="label">
