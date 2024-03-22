@@ -29,6 +29,8 @@ import DrReletedAppoinment from "../Pages/DrReletedAppoinment/DrReletedAppoinmen
 import DrReletedMessage from "../Pages/DrReletedMessage/DrReletedMessage";
 import SideBar from "../Shared/NavBar/Sidebar";
 import Home from "../Pages/Home/Home";
+import ApproveAppoinment from "../Pages/ApproveAppoinment/ApproviAppoinment";
+import RejectAppoinment from "../Pages/RejectAppoinment/RejectAppoinment";
 
 const router = createBrowserRouter([
     {
@@ -98,6 +100,14 @@ const router = createBrowserRouter([
         {
           path:'/appoinment-list/',
           element: <AppoinmentList></AppoinmentList>
+        },
+        {
+          path:'/approveappoinemnt/',
+          element: <ApproveAppoinment></ApproveAppoinment>
+        },
+        {
+          path:'/reject-apoinment/',
+          element: <RejectAppoinment></RejectAppoinment>
         },
         {
           path:'/appoinment-details/:id',

@@ -26,15 +26,6 @@ const Dashbord = () => {
     const [patient, setPatients] = useState([])
     const [payments, setPayment] = useState([])
     const [PatientAppoinment, setAppoinment] = useState([])
-    // const { data } = useQuery({
-    //     queryKey: ['patients'],
-    //     queryFn: async () => {
-    //         const res = await asiouxSecure.get('/patients/patients/')
-    //         return res.data
-    //     }
-
-
-    // })
 
 
     console.log(user)
@@ -143,8 +134,7 @@ const Dashbord = () => {
                         <IoDocumentText className="text-4xl text-white"></IoDocumentText>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/appoinment-list/'>Approve Appoinment</Link></p>
-                        <p>0</p>
+                        <p><Link to='/approveappoinemnt/'>Approve Appoinment</Link></p>
                     </div>
                 </div>
 
@@ -153,7 +143,7 @@ const Dashbord = () => {
                         <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/add-appoinment/'>Reject Appoinment</Link></p>
+                        <p><Link to='/reject-apoinment/'>Reject Appoinment</Link></p>
                     </div>
                 </div>
 
