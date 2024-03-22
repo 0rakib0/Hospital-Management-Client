@@ -28,6 +28,11 @@ const Dashbord = () => {
     const [PatientAppoinment, setAppoinment] = useState([])
 
 
+    // --------------------------------- Admin Dashbord --------------------------
+
+
+
+
     // ----------------------------------Patients Dashbod -------------------------
     const patientsId = patient?.id
     useEffect(() => {
@@ -68,7 +73,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/all-patients/'>All Patients</Link></p>
-                        <p>0</p>
+                        
                     </div>
                 </div>
 
@@ -87,7 +92,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/tretments-patients/'>In Treathment Patients</Link></p>
-                        <p>0</p>
+                        
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -96,7 +101,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/discharge-patients/'>Dishcharg Patients</Link></p>
-                        <p>0</p>
+                        
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -105,7 +110,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/all-doctors/'>All Doctors</Link></p>
-                        <p>0</p>
+                        
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -123,7 +128,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/appoinment-list/'>All Appoinment</Link></p>
-                        <p>0</p>
+                        
                     </div>
                 </div>
 
@@ -219,7 +224,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/appoinment-list/'>All Appoinment</Link></p>
-                        <p>0</p>
+                        
                     </div>
                 </div>
 
