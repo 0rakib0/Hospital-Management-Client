@@ -20,7 +20,7 @@ const ApproveAppoinment = () => {
 
     return (
         <div>
-            <PageTitle mainPage='Payment' page='Payment List'></PageTitle>
+            <PageTitle mainPage='Approve' page='Approve Appoinment'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">
                     {/* head */}
