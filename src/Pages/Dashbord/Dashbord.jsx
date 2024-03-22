@@ -31,11 +31,13 @@ const Dashbord = () => {
     // ----------------------------------Patients Dashbod -------------------------
     const patientsId = patient?.id
     useEffect(() => {
+        if (userType == 'patients'){
             asiouxSecure.get(`patients/single-patient/${user}/`)
                 .then(res => {
                     setPatients(res.data)
                 })
-    }, [user])
+        }
+    }, [user, userType])
  
     useEffect(() => {
         if (userType == 'patients') {
