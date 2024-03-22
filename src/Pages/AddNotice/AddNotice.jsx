@@ -1,10 +1,12 @@
 import Swal from "sweetalert2"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
+import { useNavigate } from "react-router-dom"
 
 const AddNotice = () => {
 
     const secureAxious = useAxious()
+    const naviget = useNavigate()
 
     const handleSubmit = e =>{
         e.preventDefault()
@@ -25,6 +27,7 @@ const AddNotice = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                naviget('/all-notice/')
             }
             else{
                 Swal.fire({

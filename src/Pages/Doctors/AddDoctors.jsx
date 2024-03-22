@@ -1,12 +1,13 @@
 import Swal from "sweetalert2"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
+import { useNavigate } from "react-router-dom"
 
 const AddDoctors = () =>{
 
 
     const secureAxious = useAxious()
-
+    const naviget = useNavigate()
     const handleSubmit = event =>{
         event.preventDefault()
         const form = event.target;
@@ -37,6 +38,7 @@ const AddDoctors = () =>{
                     timer: 1500
                 });
                 form.reset()
+                naviget('/all-doctors/')
             }
             else{
                 Swal.fire({

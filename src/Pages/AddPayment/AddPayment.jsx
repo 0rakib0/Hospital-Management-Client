@@ -3,11 +3,13 @@ import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useState } from "react"
 import Swal from "sweetalert2"
+import { useNavigate } from "react-router-dom"
 
 const AddPayment = () => {
 
     const secureAxious = useAxious()
     const [paytientId, setPaytientID] = useState(null)
+    const naviget = useNavigate()
 
     const {data:paytients} = useQuery({
         queryKey:['paytients'],
@@ -54,6 +56,7 @@ const AddPayment = () => {
                     timer: 1500
                 });
                 form.reset()
+                naviget('/payment-list/')
             }
             else{
                 Swal.fire({

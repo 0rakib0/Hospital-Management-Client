@@ -2,11 +2,14 @@ import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import Swal from "sweetalert2"
+import { useNavigate } from "react-router-dom"
 
 const AddAppoinment = () => {
 
 
     const secureAxious = useAxious()
+
+    const naviget = useNavigate()
 
     const {data:paytients} = useQuery({
         queryKey:['paytients'],
@@ -55,6 +58,7 @@ const AddAppoinment = () => {
                     timer: 1500
                 });
                 form.reset()
+                naviget('/appoinment-list/')
             }
             else{
                 Swal.fire({

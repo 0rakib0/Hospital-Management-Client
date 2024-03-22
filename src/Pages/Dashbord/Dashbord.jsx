@@ -71,7 +71,7 @@ const Dashbord = () => {
 
     return (
         //--------------------------------Admin Dashbord-------------------------------------
-        <> {userType == 'admin' && <div className="m-6">
+        <div className="pb-96"> {userType == 'admin' && <div className="m-6">
             <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-4">
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
@@ -204,7 +204,7 @@ const Dashbord = () => {
 
             {/* --------------------------------------Doctor Dashbord----------------------------------- */}
 
-            {userType == 'doctor' && <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-4 mt-6">
+            {userType == 'doctor' && <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-4 mt-6 mx-6">
 
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
@@ -451,7 +451,7 @@ const Dashbord = () => {
             </div>
             }
 
-        </>
+        </div>
     )
 }
 

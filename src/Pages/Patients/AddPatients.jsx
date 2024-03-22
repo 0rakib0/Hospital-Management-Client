@@ -2,12 +2,13 @@ import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom"
 
 const Addpatients = () => {
 
 
     const secureAxious = useAxious()
-
+    const naviget = useNavigate()
     const handleSubmit = event => {
         event.preventDefault();
 
@@ -42,6 +43,7 @@ const Addpatients = () => {
                         timer: 1500
                     });
                     form.reset()
+                    naviget('/all-patients/')
                 }
                 else{
                     Swal.fire({
