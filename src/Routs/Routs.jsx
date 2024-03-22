@@ -25,7 +25,6 @@ import SendMessage from "../Pages/SendMessage/SendMessage";
 import AllMessage from "../Pages/AllMessage/AllMessage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import PrivatRouts from "./PrivatRouts";
-import SignelPatientsInfo from "../Pages/Dashbord/PatientsDashbord";
 import DrReletedAppoinment from "../Pages/DrReletedAppoinment/DrReletedAppoinment";
 import DrReletedMessage from "../Pages/DrReletedMessage/DrReletedMessage";
 import SideBar from "../Shared/NavBar/Sidebar";
@@ -123,10 +122,6 @@ const router = createBrowserRouter([
         {
           path:'/login/',
           element: <LoginPage></LoginPage>
-        },
-        {
-          path:'/single-patienst-info/',
-          element: <SignelPatientsInfo></SignelPatientsInfo>
         },
         {
           path:'/dr-eleted-appoinment/',

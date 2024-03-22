@@ -139,6 +139,25 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                        <IoDocumentText className="text-4xl text-white"></IoDocumentText>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/appoinment-list/'>Approve Appoinment</Link></p>
+                        <p>0</p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/add-appoinment/'>Reject Appoinment</Link></p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
                         <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
                     </div>
