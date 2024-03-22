@@ -28,37 +28,33 @@ const Dashbord = () => {
     const [PatientAppoinment, setAppoinment] = useState([])
 
 
-    console.log(user)
-
     // ----------------------------------Patients Dashbod -------------------------
-
-    useEffect(() => {
-        asiouxSecure.get(`patients/single-patient/${user}/`)
-            .then(res => {
-                setPatients(res.data)
-            })
-    }, [user])
-
     const patientsId = patient?.id
-    console.log('----------------------------')
-    console.log(patientsId)
-
+    useEffect(() => {
+            asiouxSecure.get(`patients/single-patient/${user}/`)
+                .then(res => {
+                    setPatients(res.data)
+                })
+    }, [user])
+ 
+    useEffect(() => {
+        if (userType == 'patients') {
+            asiouxSecure.get(`/payments/${patientsId}`)
+                .then(res => {
+                    setPayment(res.data)
+                })
+        }
+    }, [patientsId, userType])
 
 
     useEffect(() => {
-        asiouxSecure.get(`/payments/${patientsId}`)
-            .then(res => {
-                setPayment(res.data)
-            })
-    }, [patientsId])
-
-
-    useEffect(() => {
-        asiouxSecure.get(`/patients-appoinment/${patientsId}`)
-            .then(res => {
-                setAppoinment(res.data)
-            })
-    }, [patientsId])
+        if (userType == 'patients') {
+            asiouxSecure.get(`/patients-appoinment/${patientsId}`)
+                .then(res => {
+                    setAppoinment(res.data)
+                })
+        }
+    }, [patientsId, userType])
 
     return (
         //--------------------------------Admin Dashbord-------------------------------------
