@@ -27,7 +27,6 @@ import LoginPage from "../Pages/LoginPage/LoginPage";
 import PrivatRouts from "./PrivatRouts";
 import DrReletedAppoinment from "../Pages/DrReletedAppoinment/DrReletedAppoinment";
 import DrReletedMessage from "../Pages/DrReletedMessage/DrReletedMessage";
-import SideBar from "../Shared/NavBar/Sidebar";
 import Home from "../Pages/Home/Home";
 import ApproveAppoinment from "../Pages/ApproveAppoinment/ApproviAppoinment";
 import RejectAppoinment from "../Pages/RejectAppoinment/RejectAppoinment";
@@ -43,91 +42,91 @@ const router = createBrowserRouter([
         },
         {
             path:'/dashbord/',
-            element: <Dashbord></Dashbord>
+            element: <PrivatRouts><Dashbord></Dashbord></PrivatRouts>
         },
         {
           path:'/add-patients/',
-          element: <Addpatients></Addpatients>
+          element: <PrivatRouts><Addpatients></Addpatients></PrivatRouts>
         },
         {
           path:'/all-patients/',
-          element: <AllPatients></AllPatients>
+          element: <PrivatRouts><AllPatients></AllPatients></PrivatRouts>
         },
         {
           path:'/tretments-patients/',
-          element: <TretmentsPatients></TretmentsPatients>
+          element: <PrivatRouts><TretmentsPatients></TretmentsPatients></PrivatRouts>
         },
         {
           path: '/discharge-patients/',
-          element: <Discharge></Discharge>
+          element: <PrivatRouts><Discharge></Discharge></PrivatRouts>
         },
         {
           path: '/add-dostors/',
-          element: <AddDoctors></AddDoctors>
+          element: <PrivatRouts><AddDoctors></AddDoctors></PrivatRouts>
         },
         {
           path:'/update-patients/:id',
-          element: <Update_patients></Update_patients>
+          element: <PrivatRouts><Update_patients></Update_patients></PrivatRouts>
         },
         {
           path:'/patient-details/:id',
-          element: <PatientsDetails></PatientsDetails>
+          element: <PrivatRouts><PatientsDetails></PatientsDetails></PrivatRouts>
         },
         {
           path:'/all-doctors/',
-          element: <AllDoctors></AllDoctors>
+          element: <PrivatRouts><AllDoctors></AllDoctors></PrivatRouts>
         },
         {
           path:'/update-doctor/:id',
-          element: <UpdateDoctor></UpdateDoctor>
+          element: <PrivatRouts><UpdateDoctor></UpdateDoctor></PrivatRouts>
         },
         {
           path:'/doctor-details/:id',
-          element: <DoctorDetail></DoctorDetail>
+          element: <PrivatRouts><DoctorDetail></DoctorDetail></PrivatRouts>
         },
         {
           path:'/add-payment/',
-          element: <AddPayment></AddPayment>
+          element: <PrivatRouts><AddPayment></AddPayment></PrivatRouts>
         },
         {
           path:'/payment-list/',
-          element: <PaymentList></PaymentList>
+          element: <PrivatRouts><PaymentList></PaymentList></PrivatRouts>
         },
         {
           path:'/add-appoinment/',
-          element: <AddAppoinment></AddAppoinment>
+          element: <PrivatRouts><AddAppoinment></AddAppoinment></PrivatRouts>
         },
         {
           path:'/appoinment-list/',
-          element: <AppoinmentList></AppoinmentList>
+          element: <PrivatRouts><AppoinmentList></AppoinmentList></PrivatRouts>
         },
         {
           path:'/approveappoinemnt/',
-          element: <ApproveAppoinment></ApproveAppoinment>
+          element: <PrivatRouts><ApproveAppoinment></ApproveAppoinment></PrivatRouts>
         },
         {
           path:'/reject-apoinment/',
-          element: <RejectAppoinment></RejectAppoinment>
+          element: <PrivatRouts><RejectAppoinment></RejectAppoinment></PrivatRouts>
         },
         {
           path:'/appoinment-details/:id',
-          element: <AppoinmentDetails></AppoinmentDetails>
+          element: <PrivatRouts><AppoinmentDetails></AppoinmentDetails></PrivatRouts>
         },
         {
           path:'/add-notice/',
-          element: <AddNotice></AddNotice>
+          element: <PrivatRouts><AddNotice></AddNotice></PrivatRouts>
         },
         {
           path:'/all-notice/',
-          element: <AllNotice></AllNotice>
+          element: <PrivatRouts><AllNotice></AllNotice></PrivatRouts>
         },
         {
           path:'/send-message/',
-          element: <SendMessage></SendMessage>
+          element: <PrivatRouts><SendMessage></SendMessage></PrivatRouts>
         },
         {
           path:'/all-message/',
-          element:<AllMessage></AllMessage>
+          element: <PrivatRouts><AllMessage></AllMessage></PrivatRouts>
         },
         {
           path:'/login/',
@@ -135,17 +134,13 @@ const router = createBrowserRouter([
         },
         {
           path:'/dr-eleted-appoinment/',
-          element: <DrReletedAppoinment></DrReletedAppoinment>
+          element: <PrivatRouts><DrReletedAppoinment></DrReletedAppoinment></PrivatRouts>
         },
         {
           path:'/dr-releted-message/',
-          element: <DrReletedMessage></DrReletedMessage>
+          element: <PrivatRouts><DrReletedMessage></DrReletedMessage></PrivatRouts>
         }
       ]
-    },
-    {
-      path:'/sidebar/',
-      element: <SideBar></SideBar>
     }
   ]);
 
