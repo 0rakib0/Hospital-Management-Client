@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAuth from "../../Hook/useAuth";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 
 const DrReletedMessage = () =>{
@@ -106,6 +107,7 @@ const DrReletedMessage = () =>{
                         }
                     </tbody>
                 </table>
+                <p className="text-center my-6">{useNoDataMessage(messages)}</p>
             </div>
         </div>
     )

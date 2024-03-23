@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
 import { useState } from "react";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 const PaymentList = () => {
 
@@ -73,6 +74,7 @@ const PaymentList = () => {
                         }
                     </tbody>
                 </table>
+                <p className="text-center my-6">{useNoDataMessage(payments)}</p>
             </div>
         </div>
     )
