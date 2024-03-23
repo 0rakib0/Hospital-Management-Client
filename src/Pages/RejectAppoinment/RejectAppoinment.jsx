@@ -3,6 +3,7 @@ import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { Link } from "react-router-dom"
 import { FaEye } from "react-icons/fa"
+import useNoDataMessage from "../../Hook/useNoDataMessage"
 
 const RejectAppoinment = () => {
 
@@ -78,6 +79,7 @@ const RejectAppoinment = () => {
                         }
                     </tbody>
                 </table>
+                <p className="text-center my-6">{useNoDataMessage(appoinments)}</p>
             </div>
         </div>
     )

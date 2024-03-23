@@ -4,6 +4,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { Link } from "react-router-dom";
 import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 const AppoinmentList = () => {
 
@@ -110,6 +111,7 @@ const AppoinmentList = () => {
                         }
                     </tbody>
                 </table>
+                <p className="text-center my-6">{useNoDataMessage(appoinments)}</p>
             </div>
         </div>
     )

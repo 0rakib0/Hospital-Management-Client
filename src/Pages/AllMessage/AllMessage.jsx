@@ -4,6 +4,7 @@ import useAxious from "../../Hook/SecureAxious";
 import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 const AllMessage = () => {
 
@@ -104,6 +105,7 @@ const AllMessage = () => {
                         }
                     </tbody>
                 </table>
+                <p className="text-center my-6">{useNoDataMessage(messages)}</p>
             </div>
         </div>
     )

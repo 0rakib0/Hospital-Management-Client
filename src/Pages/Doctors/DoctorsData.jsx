@@ -2,6 +2,7 @@ import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxious from "../../Hook/SecureAxious";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 
 const DoctorsData = ({ doctors, refetch }) => {
@@ -98,6 +99,7 @@ const DoctorsData = ({ doctors, refetch }) => {
                 </tbody>
 
             </table>
+            <p className="text-center my-6">{useNoDataMessage(doctors)}</p>
         </div>
     )
 }

@@ -4,22 +4,26 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { Link } from "react-router-dom"
 import { FaTrash } from "react-icons/fa"
 import Swal from "sweetalert2"
+import { useEffect, useState } from "react"
+import useNoDataMessage from "../../Hook/useNoDataMessage"
 
-const AllNotice = () =>{
+const AllNotice = () => {
 
     const secureAxious = useAxious()
 
+    
 
-    const {data:notice, refetch} = useQuery({
-        queryKey:['notice'],
-        queryFn: async () =>{
+
+    const { data: notice, refetch } = useQuery({
+        queryKey: ['notice'],
+        queryFn: async () => {
             const res = await secureAxious.get('/notice/')
             return res.data
         }
     })
 
 
-    const handleDelete = (id) =>{
+    const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You want to delete this Notice?",
@@ -95,6 +99,7 @@ const AllNotice = () =>{
                         }
                     </tbody>
                 </table>
+                        <p className="text-center my-6">{useNoDataMessage(notice)}</p>
             </div>
         </div>
     )

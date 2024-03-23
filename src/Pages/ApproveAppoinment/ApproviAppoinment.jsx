@@ -4,6 +4,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useQuery } from "@tanstack/react-query"
 import { Link } from "react-router-dom"
 import { FaEye } from "react-icons/fa"
+import useNoDataMessage from "../../Hook/useNoDataMessage"
 
 const ApproveAppoinment = () => {
     const secureAxious = useAxious()
@@ -80,6 +81,7 @@ const ApproveAppoinment = () => {
                         }
                     </tbody>
                 </table>
+                <p className="text-center my-6">{useNoDataMessage(appoinments)}</p>
             </div>
         </div>
     )
