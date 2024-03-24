@@ -15,4 +15,9 @@ Health Care is a Hospital Management System. This website caters to three types 
 * Admin can make payments to patients. After successful payment, the web application sends an email to the provided payment email address, including patient information and payment amount.
 * Admin can send messages to specific doctors.
 * Admin can post notices and view all notices in a tabular format.
-  
+
+#### Doctor
+* Doctors can view all appointments related to them.
+* Doctor can approve or reject appointments.
+* After approving or rejecting appointments, both the admin and the patient related to the appointment can see the updated status, whether it's approved or rejected.
+* Doctor can view messages related to them and also see all notices published by the admin.
