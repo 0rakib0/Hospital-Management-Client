@@ -21,3 +21,10 @@ Health Care is a Hospital Management System. This website caters to three types 
 * Doctor can approve or reject appointments.
 * After approving or rejecting appointments, both the admin and the patient related to the appointment can see the updated status, whether it's approved or rejected.
 * Doctor can view messages related to them and also see all notices published by the admin.
+
+  #### Patients
+  * After logging in, the patient is redirected to the Patient Dashboard.
+  * In the Patient Dashboard, patients can view all their information.
+  * Patients can also see their related appointments with live status updates indicating whether they are approved or rejected, along with the appointment date.
+  * Patients can view all payment data in a tabular format, including payment details such as date, amount, service name, etc.
+
