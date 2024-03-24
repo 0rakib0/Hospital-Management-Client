@@ -27,4 +27,10 @@ Health Care is a Hospital Management System. This website caters to three types 
   * In the Patient Dashboard, patients can view all their information.
   * Patients can also see their related appointments with live status updates indicating whether they are approved or rejected, along with the appointment date.
   * Patients can view all payment data in a tabular format, including payment details such as date, amount, service name, etc.
+ 
+#### How To Run This Project
+* Clone this GitHub repository.
+* Also, clone the backend repository "Hostipat-Django-Server" and follow the instructions in the repository's README file to run the backend server.
+* To install all packages, run the command "npm i". Ensure that Node.js is installed on your PC and connected to the internet.
+* After installing all packages, start the server by running the command 'npm run dev'.
 
