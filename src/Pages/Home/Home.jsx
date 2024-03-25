@@ -1,3 +1,4 @@
+import useAuth from "../../Hook/useAuth"
 import AboutUs from "./AboutUs"
 import Banner from "./Banner"
 import ComplatedService from "./ComplatedService"
@@ -7,6 +8,12 @@ import Service from "./Services"
 import Team from "./Team"
 
 const Home = () =>{
+
+
+    const {userInfo} = useAuth()
+
+    console.log(userInfo)
+
     return (
         <div className="mx-6">
             <Banner></Banner>

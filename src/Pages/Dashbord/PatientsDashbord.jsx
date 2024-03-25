@@ -3,6 +3,7 @@ import useAxious from "../../Hook/SecureAxious"
 import useAuth from "../../Hook/useAuth"
 import { Link } from "react-router-dom"
 import { FaEye, FaWheelchair } from "react-icons/fa";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 const PatientsDashbord = () => {
 
@@ -15,18 +16,19 @@ const PatientsDashbord = () => {
     const [PatientAppoinment, setAppoinment] = useState([])
 
 
-
+    
 
     const patientsId = patient?.id
     useEffect(() => {
-
+        
         asiouxSecure.get(`patients/single-patient/${user}/`)
-            .then(res => {
-                setPatients(res.data)
-            })
-
+        .then(res => {
+            setPatients(res.data)
+        })
+        
     }, [user])
-
+    
+    console.log(patient)
     useEffect(() => {
         if (patientsId) {
         asiouxSecure.get(`/payments/${patientsId}`)
@@ -55,7 +57,7 @@ const PatientsDashbord = () => {
                     <div className="lg:w-6/12 bg-white">
                         <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Details</p>
                         <div className="bg-primaryColor w-[15rem] h-[15rem] overflow-hidden ml-6 mt-4">
-                            <img src={'http://127.0.0.1:8000' + patient?.patients_pic} className="w-full" alt="" />
+                            <img src={patient?.patients_pic} className="w-full" alt="" />
                         </div>
                         <div className="overflow-x-auto my-4 ">
                             <table className="table">
@@ -194,7 +196,7 @@ const PatientsDashbord = () => {
 
                             </tbody>
                         </table>
-
+                        <p className="text-center my-6">{useNoDataMessage(PatientAppoinment)}</p>
                     </div>
                 </div>
             </div>
@@ -248,6 +250,7 @@ const PatientsDashbord = () => {
                         </tbody>
 
                     </table>
+                    <p className="text-center my-6">{useNoDataMessage(payments)}</p>
                 </div>
             </div>
         </>

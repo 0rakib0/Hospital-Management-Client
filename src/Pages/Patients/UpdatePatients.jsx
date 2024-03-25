@@ -62,7 +62,7 @@ const Update_patients = () =>{
     const {data:patient} = useQuery({
         queryKey:['patients', patientsId],
         queryFn: async () =>{
-            const res = await secureAxious.get(`http://127.0.0.1:8000/patients/patients/${patientsId}`)
+            const res = await secureAxious.get(`https://hostipat-django-server.vercel.app/patients/patients/${patientsId}`)
             return res.data
         }
     })

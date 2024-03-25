@@ -25,7 +25,7 @@ const DoctorDetail = () =>{
                     <div className="lg:w-6/12 bg-white">
                         <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Details</p>
                         <div className="bg-primaryColor w-[15rem] h-[15rem] overflow-hidden ml-6 mt-4">
-                            <img src={'http://127.0.0.1:8000' + doctor?.doctor_pic} className="w-full" alt="" />
+                            <img src={doctor?.doctor_pic} className="w-full" alt="" />
                         </div>
                         <div className="overflow-x-auto my-4 ">
                             <table className="table">

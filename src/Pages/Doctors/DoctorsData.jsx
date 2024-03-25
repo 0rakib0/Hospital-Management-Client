@@ -64,7 +64,7 @@ const DoctorsData = ({ doctors, refetch }) => {
                             <th className="border">
                                 <div className="avatar">
                                     <div className="bg-neutral text-neutral-content rounded-full w-12">
-                                        <img src={'http://127.0.0.1:8000' + doctor?.doctor_pic} alt="" />
+                                        <img src={doctor?.doctor_pic} alt="" />
 
                                     </div>
                                 </div>

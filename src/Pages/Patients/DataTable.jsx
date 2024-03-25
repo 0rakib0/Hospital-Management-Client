@@ -60,7 +60,7 @@ const DataTable = ({ patients, refetch }) => {
                             <th className="border">
                                 <div className="avatar">
                                     <div className="bg-neutral text-neutral-content rounded-full w-12">
-                                        <img src={'http://127.0.0.1:8000' + patient.patients_pic} alt="" />
+                                        <img src={patient.patients_pic} alt="No image found" />
 
                                     </div>
                                 </div>
