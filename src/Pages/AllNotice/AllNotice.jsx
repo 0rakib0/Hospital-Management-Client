@@ -14,13 +14,16 @@ const AllNotice = () => {
     
 
 
-    const { data: notice, refetch } = useQuery({
+    const { data: notice, isLoading, refetch } = useQuery({
         queryKey: ['notice'],
         queryFn: async () => {
             const res = await secureAxious.get('/notice/')
             return res.data
         }
     })
+
+
+    
 
 
     const handleDelete = (id) => {

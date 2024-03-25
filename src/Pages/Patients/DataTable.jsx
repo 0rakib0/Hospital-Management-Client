@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxious from "../../Hook/SecureAxious";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
+import { useEffect, useState } from "react";
 
-const DataTable = ({ patients, refetch }) => {
+const DataTable = ({ patients, refetch, loading }) => {
 
     const secureAxious = useAxious()
 
@@ -34,6 +35,15 @@ const DataTable = ({ patients, refetch }) => {
         });
     }
 
+
+    if (loading) {
+        return <div className="flex flex-col gap-4 w-full mt-6">
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-tull"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>; // Render a loading indicator while data is being fetched
+    }
 
     return (
         <div className="overflow-x-auto bg-white my-4 shadow-lg">
@@ -86,7 +96,7 @@ const DataTable = ({ patients, refetch }) => {
                                 <div className="bg-blue-400 p-1 text-white rounded-md">
                                     <Link to={`/patient-details/${patient.id}`}><FaEye></FaEye></Link>
                                 </div>
-                                
+
                                 <div className="bg-green-400 p-1 text-white rounded-md">
                                     <Link to={`/update-patients/${patient.id}`}><FaPencilAlt></FaPencilAlt></Link>
                                 </div>
