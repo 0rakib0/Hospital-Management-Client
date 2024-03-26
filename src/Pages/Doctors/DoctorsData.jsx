@@ -5,7 +5,7 @@ import useAxious from "../../Hook/SecureAxious";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 
-const DoctorsData = ({ doctors, refetch }) => {
+const DoctorsData = ({ doctors, loading, refetch }) => {
 
     const secureAxious = useAxious()
 
@@ -36,6 +36,15 @@ const DoctorsData = ({ doctors, refetch }) => {
                     })
             }
         });
+    }
+
+    if (loading) {
+        return <div className="flex flex-col gap-4 w-full mt-6">
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-tull"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>; // Render a loading indicator while data is being fetched
     }
 
 

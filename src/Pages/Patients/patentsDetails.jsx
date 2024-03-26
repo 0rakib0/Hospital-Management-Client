@@ -27,7 +27,7 @@ const PatientsDetails = () => {
         }
     })
 
-    const { data: PatientAppoinment } = useQuery({
+    const { data: PatientAppoinment, isLoading } = useQuery({
         queryKey: ['PatientAppoinment', patientsId],
         queryFn: async () => {
             const res = await secureAxious.get(`/patients-appoinment/${patientsId}`)
@@ -41,6 +41,15 @@ const PatientsDetails = () => {
                 console.log(res.data)
                 refetch()
             })
+    }
+
+    if (isLoading) {
+        return <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
+        <div className="skeleton h-32 w-full"></div>
+        <div className="skeleton h-4 w-28"></div>
+        <div className="skeleton h-4 w-full"></div>
+        <div className="skeleton h-4 w-full"></div>
+      </div>
     }
 
     return (

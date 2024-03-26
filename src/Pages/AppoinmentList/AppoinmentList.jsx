@@ -5,18 +5,23 @@ import { Link } from "react-router-dom";
 import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
+import { useState } from "react";
 
 const AppoinmentList = () => {
 
     const secureAxious = useAxious()
+    const [loading, setLoading] = useState(false)
 
     const { data: appoinments, refetch } = useQuery({
         queryKey: ['appoinment'],
         queryFn: async () => {
+            setLoading(true)
             const res = await secureAxious.get('/appoinment/')
+            setLoading(false)
             return res.data
         }
     })
+
 
     const handleDelete = (id) => {
 
@@ -44,6 +49,10 @@ const AppoinmentList = () => {
             }
         });
     }
+
+
+
+
 
     return (
         <div>
@@ -111,6 +120,13 @@ const AppoinmentList = () => {
                         }
                     </tbody>
                 </table>
+                {loading && <div className="flex flex-col gap-4 w-full mt-6">
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-tull"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>}
+
                 <p className="text-center my-6">{useNoDataMessage(appoinments)}</p>
             </div>
         </div>
