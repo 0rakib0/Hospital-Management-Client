@@ -12,7 +12,7 @@ const DrReletedAppoinment = () => {
     const secureAxious = useAxious()
     const { user } = useAuth()
 
-    const { data: appoinments, refetch } = useQuery({
+    const { data: appoinments, isLoading, refetch } = useQuery({
         queryKey: ['appoinment'],
         queryFn: async () => {
             const res = await secureAxious.get(`doctor-releted-appoinment/${user}`)
@@ -107,6 +107,12 @@ const DrReletedAppoinment = () => {
                         }
                     </tbody>
                 </table>
+                {isLoading && <div className="flex flex-col gap-4 w-full mt-6">
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-tull"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>}
                 <p className="text-center my-6">{useNoDataMessage(appoinments)}</p>
             </div>
         </div>

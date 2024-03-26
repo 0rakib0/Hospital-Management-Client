@@ -1,23 +1,20 @@
 import { useQuery } from "@tanstack/react-query"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
-import { useState } from "react";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 const PaymentList = () => {
 
     const secureAxious = useAxious()
 
-    const [paymentDate, setPaymentDate] = useState()
 
-    const { data: payments } = useQuery({
+    const { data: payments, isLoading } = useQuery({
         queryKey: ['payments'],
         queryFn: async () => {
             const res = await secureAxious.get('/payments/')
             return res.data
         }
     })
-
 
     return (
         <div>
@@ -74,6 +71,12 @@ const PaymentList = () => {
                         }
                     </tbody>
                 </table>
+                {isLoading && <div className="flex flex-col gap-4 w-full mt-6">
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-tull"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>}
                 <p className="text-center my-6">{useNoDataMessage(payments)}</p>
             </div>
         </div>

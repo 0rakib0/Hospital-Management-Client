@@ -13,7 +13,7 @@ const DrReletedMessage = () =>{
 
     const secureAxious = useAxious()
     const {user} = useAuth()
-    const {data:messages, refetch} = useQuery({
+    const {data:messages, isLoading, refetch} = useQuery({
         queryKey:['message'],
         queryFn: async () =>{
             const res = await secureAxious.get(`doctor-releted-message/${user}`)
@@ -107,6 +107,12 @@ const DrReletedMessage = () =>{
                         }
                     </tbody>
                 </table>
+                {isLoading && <div className="flex flex-col gap-4 w-full mt-6">
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-tull"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>}
                 <p className="text-center my-6">{useNoDataMessage(messages)}</p>
             </div>
         </div>
