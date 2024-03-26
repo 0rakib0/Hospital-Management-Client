@@ -10,7 +10,6 @@ import useNoDataMessage from "../../Hook/useNoDataMessage"
 const AllNotice = () => {
 
     const secureAxious = useAxious()
-
     
 
 
@@ -23,6 +22,7 @@ const AllNotice = () => {
     })
 
 
+    
     
 
 
@@ -102,7 +102,13 @@ const AllNotice = () => {
                         }
                     </tbody>
                 </table>
-                        <p className="text-center my-6">{useNoDataMessage(notice)}</p>
+                {isLoading && <div className="flex flex-col gap-4 w-full mt-6">
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-tull"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>}
+                <p className="text-center my-6">{useNoDataMessage(notice)}</p>
             </div>
         </div>
     )

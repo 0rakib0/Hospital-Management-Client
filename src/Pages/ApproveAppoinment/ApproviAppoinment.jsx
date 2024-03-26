@@ -10,13 +10,22 @@ const ApproveAppoinment = () => {
     const secureAxious = useAxious()
     const [appoinments, setAppoinment] = useState([])
 
+    const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
+        setLoading(true)
         secureAxious.get('filter-appoinment-data/?filter=approve')
             .then(res => {
                 setAppoinment(res.data)
+                setLoading(false)
+            })
+            .catch(errr => {
+                alert(errr)
             })
     }, [])
+
+
 
 
     return (
@@ -81,6 +90,12 @@ const ApproveAppoinment = () => {
                         }
                     </tbody>
                 </table>
+                {loading && <div className="flex flex-col gap-4 w-full mt-6">
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-tull"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>}
                 <p className="text-center my-6">{useNoDataMessage(appoinments)}</p>
             </div>
         </div>
