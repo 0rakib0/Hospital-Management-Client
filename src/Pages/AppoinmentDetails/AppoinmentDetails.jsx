@@ -9,13 +9,23 @@ const AppoinmentDetails = () => {
     const appoinmentt = useParams()
     const appoinmentID = appoinmentt.id
 
-    const { data: appoinments } = useQuery({
+    const { data: appoinments, isLoading } = useQuery({
         queryKey: ['appoinment', appoinmentID],
         queryFn: async () => {
             const res = await secureAxious.get(`/appoinment/${appoinmentID}`)
             return res.data
         }
     })
+
+
+    if (isLoading) {
+        return <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>
+    }
 
     return (
         <div>
