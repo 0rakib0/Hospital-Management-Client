@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <HelmetProvider>
-          <div className='bg-[#e4f1eafa] pb-4'>
+          <div className='bg-[#e4f1eafa] pb-4 overflow-hidden'>
             <RouterProvider router={router} />
           </div>
         </HelmetProvider>
