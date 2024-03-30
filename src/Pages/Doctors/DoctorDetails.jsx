@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import { useParams } from "react-router-dom"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
+import { Helmet } from "react-helmet-async"
 
 const DoctorDetail = () =>{
 
@@ -27,6 +28,9 @@ const DoctorDetail = () =>{
     console.log(doctor)
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Dr. Details</title>
+            </Helmet>
             <div>
             <PageTitle mainPage='Doctor' page='Doctor Details'></PageTitle>
             <div className="my-4 p-4 rounded-md shadow-lg">

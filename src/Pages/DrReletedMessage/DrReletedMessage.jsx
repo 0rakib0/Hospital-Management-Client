@@ -6,6 +6,7 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAuth from "../../Hook/useAuth";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
+import { Helmet } from "react-helmet-async";
 
 
 const DrReletedMessage = () =>{
@@ -50,6 +51,9 @@ const DrReletedMessage = () =>{
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Dr Message</title>
+            </Helmet>
             <PageTitle mainPage='Message' page='Message List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

@@ -2,6 +2,7 @@ import Swal from "sweetalert2"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 const AddNotice = () => {
 
@@ -46,6 +47,9 @@ const AddNotice = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Add Notice</title>
+            </Helmet>
             <PageTitle mainPage='Notice' page='Add New Notice'></PageTitle>
             <form onSubmit={handleSubmit} className="mt-4 mx-6">
                     <label className="form-control w-full">

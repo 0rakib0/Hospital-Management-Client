@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import DataTable from "./DataTable"
+import { Helmet } from "react-helmet-async"
 
 const TretmentsPatients = () => {
 
@@ -17,6 +18,9 @@ const TretmentsPatients = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Treathment Patients</title>
+            </Helmet>
             <PageTitle title={'Treatment Patients'} mainPage='Patients' page={'Treatment Patients'}></PageTitle>
             <div className="mx-6">
                 <DataTable patients={patients} refetch={refetch} loading={isLoading}></DataTable>

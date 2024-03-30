@@ -3,6 +3,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 const UpdateDoctor = () =>{
 
@@ -72,6 +73,9 @@ const UpdateDoctor = () =>{
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Update Dr</title>
+            </Helmet>
             <PageTitle mainPage='Doctors' page='Update Doctors'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Add Doctors</h4>

@@ -3,6 +3,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
 import { Link, useParams } from "react-router-dom"
 import { FaEye } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const PatientsDetails = () => {
 
@@ -54,6 +55,9 @@ const PatientsDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Patielnt Details</title>
+            </Helmet>
             <PageTitle mainPage='Patients' page='Patient Details'></PageTitle>
             <div className="my-4 p-4 rounded-md shadow-lg">
                 <div className="flex lg:flex-row flex-col gap-4">

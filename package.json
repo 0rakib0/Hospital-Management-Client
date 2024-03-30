@@ -21,6 +21,7 @@
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.4",
     "react-icons": "^5.0.1",
     "react-lottie": "^1.2.4",
     "react-moment": "^1.1.3",

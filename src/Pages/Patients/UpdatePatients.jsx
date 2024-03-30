@@ -3,6 +3,7 @@ import useAxious from "../../Hook/SecureAxious";
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 const Update_patients = () =>{
 
@@ -70,6 +71,9 @@ const Update_patients = () =>{
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Update Patient</title>
+            </Helmet>
             <PageTitle mainPage='Patients' page='Update Patient'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg">
                 <h4 className="text-2xl font-semibold pb-2">Update Patients</h4>

@@ -4,6 +4,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useState } from "react"
 import Swal from "sweetalert2"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 const AddPayment = () => {
 
@@ -82,6 +83,9 @@ const AddPayment = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | App Payment</title>
+            </Helmet>
             <PageTitle mainPage='Payment' page='Add Payment'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg mx-6">
                 <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>

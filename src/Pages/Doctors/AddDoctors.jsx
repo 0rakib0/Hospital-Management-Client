@@ -2,6 +2,7 @@ import Swal from "sweetalert2"
 import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 const AddDoctors = () =>{
 
@@ -59,6 +60,9 @@ const AddDoctors = () =>{
     }
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Add Doctor</title>
+            </Helmet>
             <PageTitle mainPage='Doctors' page='Add Doctors'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg mx-6">
                 <h4 className="text-2xl font-semibold pb-2">Add Doctors</h4>

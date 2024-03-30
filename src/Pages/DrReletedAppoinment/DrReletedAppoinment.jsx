@@ -6,6 +6,7 @@ import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
 import useAuth from "../../Hook/useAuth";
 import Swal from 'sweetalert2';
 import useNoDataMessage from "../../Hook/useNoDataMessage";
+import { Helmet } from "react-helmet-async";
 
 const DrReletedAppoinment = () => {
 
@@ -41,6 +42,9 @@ const DrReletedAppoinment = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Dr. Appoinment</title>
+            </Helmet>
             <PageTitle mainPage='appoinment' page='Appoinment List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

@@ -4,6 +4,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { Link } from "react-router-dom"
 import { FaEye } from "react-icons/fa"
 import useNoDataMessage from "../../Hook/useNoDataMessage"
+import { Helmet } from "react-helmet-async"
 
 const RejectAppoinment = () => {
 
@@ -22,6 +23,9 @@ const RejectAppoinment = () => {
     }, [])
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Rejected appt</title>
+            </Helmet>
             <PageTitle mainPage='Reject' page='Reject Appoinment'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

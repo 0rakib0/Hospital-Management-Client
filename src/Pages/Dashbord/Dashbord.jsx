@@ -15,7 +15,7 @@ import { LuMessageSquarePlus } from "react-icons/lu";
 import { RiWechatPayLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import PatientsDashbord from "./PatientsDashbord";
-
+import { Helmet } from 'react-helmet-async';
 
 
 const Dashbord = () => {
@@ -31,11 +31,14 @@ const Dashbord = () => {
 
 
 
-  
+
 
     return (
         //--------------------------------Admin Dashbord-------------------------------------
         <div className="pb-96"> {userType == 'admin' && <div className="m-6">
+            <Helmet>
+                <title>Health Care | Dashbord</title>
+            </Helmet>
             <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-4">
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
@@ -43,7 +46,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/all-patients/'>All Patients</Link></p>
-                        
+
                     </div>
                 </div>
 
@@ -62,7 +65,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/tretments-patients/'>In Treathment Patients</Link></p>
-                        
+
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -71,7 +74,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/discharge-patients/'>Dishcharg Patients</Link></p>
-                        
+
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -80,7 +83,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/all-doctors/'>All Doctors</Link></p>
-                        
+
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
@@ -98,7 +101,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/appoinment-list/'>All Appoinment</Link></p>
-                        
+
                     </div>
                 </div>
 
@@ -194,7 +197,7 @@ const Dashbord = () => {
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/appoinment-list/'>All Appoinment</Link></p>
-                        
+
                     </div>
                 </div>
 
@@ -230,7 +233,7 @@ const Dashbord = () => {
             {/* ---------------------------------------Patients Dashbord---------------------------------- */}
             {userType == 'patients' && <div>
                 <PatientsDashbord></PatientsDashbord>
-                
+
             </div>
             }
 

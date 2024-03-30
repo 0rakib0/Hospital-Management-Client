@@ -1,6 +1,7 @@
 import { Navigate, useNavigate } from "react-router-dom"
 import useAuth from "../../Hook/useAuth"
 import { useEffect } from "react"
+import { Helmet } from "react-helmet-async"
 
 const LoginPage = () => {
 
@@ -25,6 +26,9 @@ const LoginPage = () => {
 
     return (
         <div className="flex gap-4 py-6 px-4 rounded-lg my-6 bg-white">
+            <Helmet>
+                <title>Health Care | login</title>
+            </Helmet>
             <div className="w-6/12">
                 <div>
                     <img src="https://www.teleklinics.com/assets/img/login-banner.png" alt="image not found" />

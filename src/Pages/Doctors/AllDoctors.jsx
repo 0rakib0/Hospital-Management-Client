@@ -3,6 +3,7 @@ import useAxious from "../../Hook/SecureAxious"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import { data } from "autoprefixer"
 import DoctorsData from "./DoctorsData"
+import { Helmet } from "react-helmet-async"
 
 const AllDoctors = () => {
 
@@ -21,6 +22,9 @@ const AllDoctors = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | All Doctor</title>
+            </Helmet>
             <PageTitle title={'All Doctors'} mainPage='Doctors' page={'All Doctors'}></PageTitle>
             <div className="mx-6">
                 <DoctorsData doctors={doctors} refetch={refetch} loading={isLoading}></DoctorsData>

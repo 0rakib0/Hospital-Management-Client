@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Link } from "react-router-dom"
 import { FaEye } from "react-icons/fa"
 import useNoDataMessage from "../../Hook/useNoDataMessage"
+import { Helmet } from "react-helmet-async"
 
 const ApproveAppoinment = () => {
     const secureAxious = useAxious()
@@ -30,6 +31,9 @@ const ApproveAppoinment = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Approve Appt</title>
+            </Helmet>
             <PageTitle mainPage='Approve' page='Approve Appoinment'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

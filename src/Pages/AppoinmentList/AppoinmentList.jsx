@@ -6,6 +6,7 @@ import { FaEye, FaPencilAlt, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AppoinmentList = () => {
 
@@ -56,6 +57,9 @@ const AppoinmentList = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | All Appt</title>
+            </Helmet>
             <PageTitle mainPage='Payment' page='Payment List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

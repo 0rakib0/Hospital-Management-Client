@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
 import useNoDataMessage from "../../Hook/useNoDataMessage";
+import { Helmet } from "react-helmet-async";
 
 const PaymentList = () => {
 
@@ -18,6 +19,9 @@ const PaymentList = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Payment List</title>
+            </Helmet>
             <PageTitle mainPage='Payment' page='Payment List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

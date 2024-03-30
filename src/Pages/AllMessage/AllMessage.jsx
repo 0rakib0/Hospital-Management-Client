@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useNoDataMessage from "../../Hook/useNoDataMessage";
+import { Helmet } from "react-helmet-async";
 
 const AllMessage = () => {
 
@@ -48,6 +49,9 @@ const AllMessage = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | All Message</title>
+            </Helmet>
             <PageTitle mainPage='Message' page='Message List'></PageTitle>
             <div className="overflow-x-auto bg-white my-4 shadow-lg mx-6">
                 <table className="table">

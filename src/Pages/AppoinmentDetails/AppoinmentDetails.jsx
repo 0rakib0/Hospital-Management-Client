@@ -29,6 +29,9 @@ const AppoinmentDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Apt Details</title>
+            </Helmet>
             <PageTitle mainPage='Appoinments' page='Appoinment Details'></PageTitle>
             <div className="my-4 p-4 rounded-md shadow-lg">
                 <div className="flex lg:flex-row flex-col gap-4">

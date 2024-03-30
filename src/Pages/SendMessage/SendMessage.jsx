@@ -3,6 +3,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle"
 import useAxious from "../../Hook/SecureAxious"
 import Swal from "sweetalert2"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 const SendMessage = () => {
 
@@ -60,6 +61,9 @@ const SendMessage = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Health Care | Send Message</title>
+            </Helmet>
             <div>
                 <PageTitle mainPage='Message' page='Send Message'></PageTitle>
                 <form className="mt-4 mx-6" onSubmit={handlesubmit}>
