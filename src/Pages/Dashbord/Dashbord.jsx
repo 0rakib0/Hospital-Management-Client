@@ -22,13 +22,28 @@ const Dashbord = () => {
 
     const asiouxSecure = useAxious()
     const { user, userInfo } = useAuth()
-
     const userType = userInfo?.user_type
 
+    // const [loading, setLoagin] = useState(true)
 
 
+    // setTimeout(() => {
+    //     setLoagin(false);
+    // }, 1000)
 
 
+    // if (loading) {
+    //    return <div className="flex flex-col gap-4 w-full mt-6 mx-4">
+    //         <div className="skeleton h-4 w-full"></div>
+    //         <div className="skeleton h-4 w-tull"></div>
+    //         <div className="skeleton h-4 w-full"></div>
+    //         <div className="skeleton h-4 w-full"></div>
+    //     </div>
+    // }
+
+
+    console.log(userInfo)
+    console.log(userType)
 
 
 

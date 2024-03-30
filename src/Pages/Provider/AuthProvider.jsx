@@ -59,12 +59,18 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         if (userId) {
-            secureAxious.get(`/user-info/${userId}`)
+            secureAxious.get(`/user-info/${1}`)
                 .then(res => {
                     setUserinfo(res.data)
                 })
         }
     }, [userId])
+
+    console.log(useId)
+    console.log(userInfo)
+
+
+
     const authInfo = {
         user,
         userInfo,
