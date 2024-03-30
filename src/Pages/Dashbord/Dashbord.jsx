@@ -26,7 +26,7 @@ const Dashbord = () => {
     const userType = userInfo?.user_type
 
 
-    // --------------------------------- Admin Dashbord --------------------------
+
 
 
 
@@ -100,41 +100,41 @@ const Dashbord = () => {
                         <IoDocumentText className="text-4xl text-white"></IoDocumentText>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/appoinment-list/'>All Appoinment</Link></p>
+                        <p><Link to='/appoinment-list/'>All Appt</Link></p>
 
                     </div>
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
                         <IoDocumentText className="text-4xl text-white"></IoDocumentText>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/approveappoinemnt/'>Approve Appoinment</Link></p>
+                        <p><Link to='/approveappoinemnt/'>Approve Appt</Link></p>
                     </div>
                 </div>
-
-                <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
-                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
-                    </div>
-                    <div className="ml-4 text-xl">
-                        <p><Link to='/reject-apoinment/'>Reject Appoinment</Link></p>
-                    </div>
-                </div>
-
-                <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
-                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
-                    </div>
-                    <div className="ml-4 text-xl">
-                        <p><Link to='/add-appoinment/'>Add Appoinment</Link></p>
-                    </div>
-                </div>
-
 
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/reject-apoinment/'>Reject Appt</Link></p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
+                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/add-appoinment/'>Add Appt</Link></p>
+                    </div>
+                </div>
+
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
                         <HiOutlineClipboardDocumentList className="text-4xl text-white"></HiOutlineClipboardDocumentList>
                     </div>
                     <div className="ml-4 text-xl">
@@ -143,7 +143,7 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
                         <HiOutlineDocumentPlus className="text-4xl text-white"></HiOutlineDocumentPlus>
                     </div>
                     <div className="ml-4 text-xl">
@@ -151,7 +151,7 @@ const Dashbord = () => {
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
                         <MdMessage className="text-4xl text-white"></MdMessage>
                     </div>
                     <div className="ml-4 text-xl">
@@ -159,7 +159,7 @@ const Dashbord = () => {
                     </div>
                 </div>
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
                         <LuMessageSquarePlus className="text-4xl text-white"></LuMessageSquarePlus>
                     </div>
                     <div className="ml-4 text-xl">
@@ -168,7 +168,7 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
                         <RiWechatPayLine className="text-4xl text-white"></RiWechatPayLine>
                     </div>
                     <div className="ml-4 text-xl">
@@ -177,7 +177,7 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
                         <MdOutlinePayment className="text-4xl text-white"></MdOutlinePayment>
                     </div>
                     <div className="ml-4 text-xl">
