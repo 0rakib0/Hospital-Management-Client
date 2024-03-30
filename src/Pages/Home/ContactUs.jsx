@@ -1,8 +1,21 @@
+import Swal from "sweetalert2"
 import useAOS from "../../Hook/useAOS"
 import SectionTitle from "./SectionTitle"
 
 const ContactUs = () => {
     useAOS()
+
+    const handleSubmit = event =>{
+        event.preventDefault()
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Message Successfully send!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }
+
     return (
         <div data-aos="fade-up" className="md:mt-20 mt-10" id="contact">
             <SectionTitle title1='CONTACT' title2='US'></SectionTitle>
@@ -11,7 +24,7 @@ const ContactUs = () => {
                     <img src="https://qph.cf2.quoracdn.net/main-qimg-8f8aa3e13f5af63fc93cd147692bc2d4-pjlq" alt="pic not found" />
                 </div>
                 <div data-aos="fade-up-left" className="lg:w-6/12 mt-2 lg_mt-0">
-                    <form action="">
+                    <form onSubmit={handleSubmit}>
                         <label className="form-control w-full">
                             <div className="label">
                                 <span className="label-text">Full Name</span>

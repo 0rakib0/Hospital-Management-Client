@@ -17,7 +17,7 @@ const AboutUs = () => {
                     <p className="mb-4">Welcome to our healthcare management system designed for efficiency and patient care excellence. At Health Care, we're dedicated to revolutionizing healthcare administration through innovative technology. Our system streamlines operations, enhances patient care, and empowers healthcare providers to deliver exceptional service.</p>
                     <p>Our Vision
                         We envision a future where healthcare management is seamless, efficient, and patient-centered. Our goal is to provide cutting-edge solutions that optimize workflows and improve healthcare delivery.</p>
-                    <button className="button py-2 px-4 flex items-center gap-2 hover:gap-4">Now More <FaArrowRight className="icon"></FaArrowRight></button>
+                    <button className="button py-2 px-4 flex items-center gap-2 hover:gap-4 mt-2">Now More <FaArrowRight className="icon"></FaArrowRight></button>
                 </div>
             </div>
         </div>

@@ -33,7 +33,7 @@ const Department = () => {
                         <img src="https://t4.ftcdn.net/jpg/02/46/07/07/360_F_246070730_2Ycup6BmQbMt5uTm36zeDpgaGNpMZXMS.jpg" className="w-full" alt="" />
                     </div>
                     <h4 className="text-2xl py-2 font-semibold">Pediatric</h4>
-                    <p>Here's the histry f lovely lady. who was bringing up three very..</p>
+                    <p>Specialized care for infants, children, and adolescents provided with expertise.</p>
                 </div>
                 <div data-aos="fade-up" className="bg-white p-3 border rounded-lg border-primaryColor lg:border-white hover:border hover:border-primaryColor duration-300 hover:rounded-lg">
                     <div className="lg:w-70 w-64 h-44 mx-auto overflow-hidden">
@@ -47,7 +47,7 @@ const Department = () => {
                         <img src="https://t3.ftcdn.net/jpg/04/86/91/70/360_F_486917078_ls6PBMZaTLcvqFYwTDEYGHAUvUotSTqC.jpg" className="w-full" alt="" />
                     </div>
                     <h4 className="text-2xl py-2 font-semibold">Traomatology</h4>
-                    <p>Here's the histry f lovely lady. who was bringing up three very..</p>
+                    <p>Specialized care for traumatic injuries, offering expert diagnosis, treatment, and rehabilitation.</p>
                 </div>
 
                 <div data-aos="fade-up" className="bg-white p-3 border rounded-lg border-primaryColor lg:border-white hover:border hover:border-primaryColor duration-300 hover:rounded-lg">
@@ -55,14 +55,14 @@ const Department = () => {
                         <img src="https://wp04-media.cdn.ihealthspot.com/wp-content/uploads/sites/374/2023/08/istockphoto-1164464390-612x612-1.jpg" className="w-full" alt="" />
                     </div>
                     <h4 className="text-2xl py-2 font-semibold">Urology</h4>
-                    <p>Here's the histry f lovely lady. who was bringing up three very..</p>
+                    <p>Specialized care for urinary tract and male reproductive system conditions.</p>
                 </div>
                 <div data-aos="fade-up" className="bg-white p-3 border rounded-lg border-primaryColor lg:border-white hover:border hover:border-primaryColor duration-300 hover:rounded-lg">
                     <div className="lg:w-70 w-64 h-44 mx-auto overflow-hidden">
                         <img src="https://www.healthimages.com/content/uploads/sites/2/2022/11/xray.jpg" className="w-full" alt="" />
                     </div>
                     <h4 className="text-2xl py-2 font-semibold">X-ray</h4>
-                    <p>Here's the histry f lovely lady. who was bringing up three very..</p>
+                    <p>Advanced diagnostic imaging services, including X-ray, for accurate medical assessments.</p>
                 </div>
             </div>
 
