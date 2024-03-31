@@ -16,6 +16,19 @@ const DoctorDetail = () =>{
         }
     })
 
+    const email = doctor?.email
+
+    // const { data: appoinments, refetch } = useQuery({
+    //     queryKey: ['appoinment'],
+    //     queryFn: async () => {
+    //         const res = await secureAxious.get(`doctor-releted-appoinment/${email}`)
+    //         return res.data
+    //     }
+    // })
+
+    console.log(email)
+
+
 
     if (isLoading) {
         return <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
@@ -25,7 +38,6 @@ const DoctorDetail = () =>{
         <div className="skeleton h-4 w-full"></div>
       </div>
     }
-    console.log(doctor)
     return (
         <div>
             <Helmet>

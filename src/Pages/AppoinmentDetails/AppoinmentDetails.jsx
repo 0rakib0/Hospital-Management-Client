@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useQuery } from "@tanstack/react-query";
 import useAxious from "../../Hook/SecureAxious";
+import { Helmet } from "react-helmet-async";
 
 const AppoinmentDetails = () => {
 
@@ -105,9 +106,9 @@ const AppoinmentDetails = () => {
                                     </tr>
                                     <td>Appoinment Status</td>
                                     {appoinments?.reject ? (
-                                        <td className="border bg-red-400 text-white">Reject</td>
+                                        <td className="border bg-red-400 text-white">Rejected</td>
                                     ) : appoinments?.approveStatus ? (
-                                        <td className="border bg-green-400 text-white">Approve</td>
+                                        <td className="border bg-green-400 text-white">Approved</td>
                                     ) : (
                                         <td className="border bg-blue-400 text-white">Pending</td>
                                     )}
