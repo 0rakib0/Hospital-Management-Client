@@ -4,21 +4,25 @@ import useAxious from "../../Hook/SecureAxious"
 import { Link, useParams } from "react-router-dom"
 import { FaEye } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import useNoDataMessage from "../../Hook/useNoDataMessage";
 
 const PatientsDetails = () => {
 
     const singleP = useParams()
     const patientsId = singleP.id
-
     const secureAxious = useAxious()
 
-    const { data: patient, refetch } = useQuery({
+    console.log(patientsId)
+
+    const { data: patient, refetch, isLoading } = useQuery({
         queryKey: ['patients', patientsId],
         queryFn: async () => {
             const res = await secureAxious.get(`/patients/patients/${patientsId}`)
             return res.data
         }
     })
+
+    console.log(patient)
 
     const { data: payments } = useQuery({
         queryKey: ['payments', patientsId],
@@ -28,7 +32,7 @@ const PatientsDetails = () => {
         }
     })
 
-    const { data: PatientAppoinment, isLoading } = useQuery({
+    const { data: PatientAppoinment } = useQuery({
         queryKey: ['PatientAppoinment', patientsId],
         queryFn: async () => {
             const res = await secureAxious.get(`/patients-appoinment/${patientsId}`)
@@ -44,20 +48,21 @@ const PatientsDetails = () => {
             })
     }
 
-    if (isLoading) {
-        return <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
-        <div className="skeleton h-32 w-full"></div>
-        <div className="skeleton h-4 w-28"></div>
-        <div className="skeleton h-4 w-full"></div>
-        <div className="skeleton h-4 w-full"></div>
-      </div>
-    }
+   
 
     return (
         <div>
             <Helmet>
                 <title>Health Care | Patielnt Details</title>
             </Helmet>
+            {isLoading && <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
+                <div className="skeleton h-32 w-full"></div>
+                <div className="skeleton h-4 w-28"></div>
+                <div className="skeleton h-4 w-full"></div>
+                <div className="skeleton h-4 w-full"></div>
+            </div>
+
+            }
             <PageTitle mainPage='Patients' page='Patient Details'></PageTitle>
             <div className="my-4 p-4 rounded-md shadow-lg">
                 <div className="flex lg:flex-row flex-col gap-4">
@@ -193,9 +198,9 @@ const PatientsDetails = () => {
                                             }
                                         </td>
                                         <td className="border px-4 py-2">{pa.timeSlot}</td>
-                                        {pa.reject? (
+                                        {pa.reject ? (
                                             <td className="border bg-red-400 text-white">Reject</td>
-                                        ) : pa.approveStatus? (
+                                        ) : pa.approveStatus ? (
                                             <td className="border bg-green-400 text-white">Approve</td>
                                         ) : (
                                             <td className="border bg-blue-400 text-white">Pending</td>
@@ -206,7 +211,7 @@ const PatientsDetails = () => {
 
                             </tbody>
                         </table>
-
+                        <p className="text-center my-6">{useNoDataMessage(PatientAppoinment)}</p>
                     </div>
                 </div>
             </div>
@@ -257,10 +262,9 @@ const PatientsDetails = () => {
                                 </tr>)
                             }
 
-
                         </tbody>
-
                     </table>
+                    <p className="text-center my-6">{useNoDataMessage(payments)}</p>
                 </div>
             </div>
         </div>
