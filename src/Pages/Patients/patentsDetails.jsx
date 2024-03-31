@@ -68,7 +68,7 @@ const PatientsDetails = () => {
                 <div className="flex lg:flex-row flex-col gap-4">
                     <div className="lg:w-6/12 bg-white">
                         <p className="text-2xl pl-4 pt-2 font-semibold text-primaryColor">Patient Details</p>
-                        <div className="bg-primaryColor w-[15rem] h-[15rem] overflow-hidden ml-6 mt-4">
+                        <div className="bg-primaryColor w-[15rem] h-[12rem] overflow-hidden ml-6 mt-4">
                             <img src={patient?.patients_pic} className="w-full" alt="" />
                         </div>
                         <div className="overflow-x-auto my-4 ">
