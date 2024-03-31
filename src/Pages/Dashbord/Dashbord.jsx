@@ -33,7 +33,7 @@ const Dashbord = () => {
 
 
     if (loading) {
-       return <div className="flex flex-col gap-4 w-full mt-6 mx-4">
+        return <div className="flex flex-col gap-4 w-full mt-6 mx-4">
             <div className="skeleton h-4 w-full"></div>
             <div className="skeleton h-4 w-tull"></div>
             <div className="skeleton h-4 w-full"></div>
@@ -55,8 +55,18 @@ const Dashbord = () => {
                 <title>Health Care | Dashbord</title>
             </Helmet>
             <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-4">
+
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                        <TbWheelchair className="text-4xl text-white"></TbWheelchair>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/add-patients/'>Add Patients</Link></p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
                         <FaWheelchair className="text-4xl text-white"></FaWheelchair>
                     </div>
                     <div className="ml-4 text-xl">
@@ -66,20 +76,11 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
-                        <TbWheelchair className="text-4xl text-white"></TbWheelchair>
-                    </div>
-                    <div className="ml-4 text-xl">
-                        <p><Link to='/add-patients/'>Add Patients</Link></p>
-                    </div>
-                </div>
-
-                <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
                         <MdOutlineAirlineSeatReclineExtra className="text-4xl text-white"></MdOutlineAirlineSeatReclineExtra >
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/tretments-patients/'>In Treathment Patients</Link></p>
+                        <p><Link to='/tretments-patients/'>In Treatment Patients</Link></p>
 
                     </div>
                 </div>
@@ -92,17 +93,9 @@ const Dashbord = () => {
 
                     </div>
                 </div>
+
                 <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
-                        <FaUserDoctor className="text-4xl text-white"></FaUserDoctor>
-                    </div>
-                    <div className="ml-4 text-xl">
-                        <p><Link to='/all-doctors/'>All Doctors</Link></p>
-
-                    </div>
-                </div>
-                <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
                         <IoBagAddSharp className="text-4xl text-white"></IoBagAddSharp>
                     </div>
                     <div className="ml-4 text-xl">
@@ -111,7 +104,26 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
+                        <FaUserDoctor className="text-4xl text-white"></FaUserDoctor>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/all-doctors/'>All Doctors</Link></p>
+
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/add-appoinment/'>Add Appt</Link></p>
+                    </div>
+                </div>
+
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
                         <IoDocumentText className="text-4xl text-white"></IoDocumentText>
                     </div>
                     <div className="ml-4 text-xl">
@@ -121,7 +133,7 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
                         <IoDocumentText className="text-4xl text-white"></IoDocumentText>
                     </div>
                     <div className="ml-4 text-xl">
@@ -130,7 +142,7 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
                         <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
                     </div>
                     <div className="ml-4 text-xl">
@@ -139,17 +151,16 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
-                        <TiDocumentAdd className="text-4xl text-white"></TiDocumentAdd>
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                        <HiOutlineDocumentPlus className="text-4xl text-white"></HiOutlineDocumentPlus>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/add-appoinment/'>Add Appt</Link></p>
+                        <p><Link to='/add-notice/'>Add Notice</Link></p>
                     </div>
                 </div>
 
-
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
                         <HiOutlineClipboardDocumentList className="text-4xl text-white"></HiOutlineClipboardDocumentList>
                     </div>
                     <div className="ml-4 text-xl">
@@ -158,23 +169,7 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
-                        <HiOutlineDocumentPlus className="text-4xl text-white"></HiOutlineDocumentPlus>
-                    </div>
-                    <div className="ml-4 text-xl">
-                        <p><Link to='/add-notice/'>Add Notice</Link></p>
-                    </div>
-                </div>
-                <div className="bg-white flex items-center">
                     <div className="h-full w-2/5 bg-red-500 p-4 flex items-center justify-center">
-                        <MdMessage className="text-4xl text-white"></MdMessage>
-                    </div>
-                    <div className="ml-4 text-xl">
-                        <p><Link to='/all-message/'>All Message</Link></p>
-                    </div>
-                </div>
-                <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
                         <LuMessageSquarePlus className="text-4xl text-white"></LuMessageSquarePlus>
                     </div>
                     <div className="ml-4 text-xl">
@@ -183,20 +178,28 @@ const Dashbord = () => {
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
-                        <RiWechatPayLine className="text-4xl text-white"></RiWechatPayLine>
+                    <div className="h-full w-2/5 bg-blue-500 p-4 flex items-center justify-center">
+                        <MdMessage className="text-4xl text-white"></MdMessage>
                     </div>
                     <div className="ml-4 text-xl">
-                        <p><Link to='/payment-list/'>Payment Report</Link></p>
+                        <p><Link to='/all-message/'>All Message</Link></p>
                     </div>
                 </div>
 
                 <div className="bg-white flex items-center">
-                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                    <div className="h-full w-2/5 bg-green-500 p-4 flex items-center justify-center">
                         <MdOutlinePayment className="text-4xl text-white"></MdOutlinePayment>
                     </div>
                     <div className="ml-4 text-xl">
                         <p><Link to='/add-payment/'>Add Payment</Link></p>
+                    </div>
+                </div>
+                <div className="bg-white flex items-center">
+                    <div className="h-full w-2/5 bg-yellow-500 p-4 flex items-center justify-center">
+                        <RiWechatPayLine className="text-4xl text-white"></RiWechatPayLine>
+                    </div>
+                    <div className="ml-4 text-xl">
+                        <p><Link to='/payment-list/'>Payment Report</Link></p>
                     </div>
                 </div>
             </div>
