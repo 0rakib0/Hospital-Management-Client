@@ -48,21 +48,22 @@ const PatientsDetails = () => {
             })
     }
 
-   
+
+    if (isLoading) {
+        return <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>
+    }
+
 
     return (
         <div>
             <Helmet>
                 <title>Health Care | Patielnt Details</title>
             </Helmet>
-            {isLoading && <div className="flex flex-col gap-4 w-52 mt-12 ml-12">
-                <div className="skeleton h-32 w-full"></div>
-                <div className="skeleton h-4 w-28"></div>
-                <div className="skeleton h-4 w-full"></div>
-                <div className="skeleton h-4 w-full"></div>
-            </div>
-
-            }
             <PageTitle mainPage='Patients' page='Patient Details'></PageTitle>
             <div className="my-4 p-4 rounded-md shadow-lg">
                 <div className="flex lg:flex-row flex-col gap-4">
@@ -211,7 +212,6 @@ const PatientsDetails = () => {
 
                             </tbody>
                         </table>
-                        <p className="text-center my-6">{useNoDataMessage(PatientAppoinment)}</p>
                     </div>
                 </div>
             </div>
@@ -264,7 +264,6 @@ const PatientsDetails = () => {
 
                         </tbody>
                     </table>
-                    <p className="text-center my-6">{useNoDataMessage(payments)}</p>
                 </div>
             </div>
         </div>
