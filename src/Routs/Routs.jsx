@@ -30,11 +30,13 @@ import DrReletedMessage from "../Pages/DrReletedMessage/DrReletedMessage";
 import Home from "../Pages/Home/Home";
 import ApproveAppoinment from "../Pages/ApproveAppoinment/ApproviAppoinment";
 import RejectAppoinment from "../Pages/RejectAppoinment/RejectAppoinment";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path:'',
