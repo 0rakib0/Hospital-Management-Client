@@ -81,9 +81,11 @@ const DataTable = ({ patients, refetch, loading }) => {
                             <td className="border">
                                 <p>{patient.full_name}</p>
                             </td>
+                            <td className="border">
+                                <p>{patient.age}</p>
+                            </td>
                             <td className="border">{patient.phone}</td>
                             <td className="border">{patient.email}</td>
-                            <td className="border">Payment Info</td>
                             {patient.disCharged ? <th className="border">
                                 <p className="bg-primaryColor text-center text-white font-normal py-[2px] rounded">Discherge</p>
                             </th> :

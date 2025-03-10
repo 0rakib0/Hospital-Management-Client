@@ -88,7 +88,7 @@ const AddAppoinment = () => {
             </Helmet>
             <PageTitle mainPage='Appoinment' page='Add Appoinment'></PageTitle>
             <div className="bg-white my-4 p-4 rounded-md shadow-lg mx-6">
-                <h4 className="text-2xl font-semibold pb-2">Add Patients</h4>
+                <h4 className="text-2xl font-semibold pb-2">Add Appoinment</h4>
                 <hr />
                 <form className="mt-4" onSubmit={handleubmit}>
                     <div className="flex flex-col md:flex-row gap-x-4 md:mb-6 md-4">
@@ -151,7 +151,7 @@ const AddAppoinment = () => {
                             <input type="text" name="problem" placeholder="Problem" className="input input-bordered w-full focus:border-secondaryColor focus:outline-0" />
                         </label>
                     </div>
-                    <input type="submit" value='Add Payment' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
+                    <input type="submit" value='Add Appoinment' className="input bg-primaryColor w-full mt-2 text-white hover:bg-secondaryColor duration-300" />
                 </form>
             </div>
         </div>

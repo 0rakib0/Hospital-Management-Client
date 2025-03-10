@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiousSecure = axios.create({
-    baseURL: 'https://hostipat-django-server.vercel.app/',
+    baseURL: 'http://127.0.0.1:8000/',
   });
 
 

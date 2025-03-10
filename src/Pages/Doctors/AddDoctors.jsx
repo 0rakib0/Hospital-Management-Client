@@ -34,7 +34,7 @@ const AddDoctors = () =>{
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Patients successfully admited",
+                    title: "Doctor successfully Added",
                     showConfirmButton: false,
                     timer: 1500
                 });
